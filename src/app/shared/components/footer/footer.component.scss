@@ -1,0 +1,273 @@
+@import "../../../../assets/style/main.scss";
+
+.footer_component {
+  background-color: #6c3833;
+//   border-radius: 50px;
+  //   position: absolute;
+  width: 100%;
+//   max-width: 95%;
+  @include rtl(padding-left, 0px);
+
+  .bod {
+    // padding: 5px 25px;
+    width: 95%;
+    margin: auto;
+  }
+
+  li {
+    list-style-type: none;
+    cursor: pointer;
+  }
+
+  .col_center {
+    @include tablet-and-up {
+      width: 45%;
+    }
+  }
+
+  .page {
+    font-family: var(--Plus_Jakarta);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    color: white;
+
+  }
+
+  .active-page {
+    font-weight: 900 !important;
+    color: white !important;
+  }
+
+  .button1 {
+    background: none !important;
+    border-radius: 0px !important;
+    border: none;
+    color: var(--white);
+    padding: 0px !important;
+  }
+
+  .button2,
+  .button3,
+  .button4 {
+    width: 35px;
+    height: 35px;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      color: white;
+    }
+  }
+
+  .button2 {
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  }
+
+  .button3 {
+    background-color: black;
+  }
+
+  .button4 {
+    background-color: #0a66c2;
+  }
+
+
+  .button1:hover,
+  .button2:hover,
+  .button3:hover,
+  .button4:hover {
+    animation: bounce_613 0.4s linear;
+  }
+
+  @keyframes bounce_613 {
+    40% {
+      transform: scale(1.4);
+    }
+
+    60% {
+      transform: scale(0.8);
+    }
+
+    80% {
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .copy {
+    text-align: center;
+    color: white;
+    font-family:  var(--Plus_Jakarta);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.footer_component_phone {
+    background-color: #6c3833;
+      width: 100%;
+  @include rtl(padding-left, 0px);
+
+  .bod {
+    // padding: 5px 25px;
+    width: 95%;
+    margin: auto;
+  }
+
+  li {
+    list-style-type: none;
+    cursor: pointer;
+  }
+
+  .col_center {
+    @include tablet-and-up {
+      width: 45%;
+    }
+  }
+
+  .page {
+    font-family: var(--Plus_Jakarta);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    position: relative;
+    color: white;
+  }
+
+  .page:hover {
+    color: white;
+    width: fit-content;
+  }
+
+  .page::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s;
+  }
+
+  .page:hover::after {
+    width: 100%;
+  }
+
+
+
+  .active-page {
+    font-weight: 900 !important;
+    color: white !important;
+  }
+
+  .button1 {
+    background: none !important;
+    border-radius: 0px !important;
+    border: none;
+    color: var(--white);
+    padding: 0px !important;
+  }
+
+  .button2,
+  .button3,
+  .button4 {
+    width: 35px;
+    height: 35px;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      color: white;
+    }
+  }
+
+  .button2 {
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  }
+
+  .button3 {
+    background-color: black;
+  }
+
+  .button4 {
+    background-color: #0a66c2;
+  }
+
+
+  .button1:hover,
+  .button2:hover,
+  .button3:hover,
+  .button4:hover,
+  .btn_offcanvas:hover {
+    animation: bounce_613 0.4s linear;
+  }
+
+  @keyframes bounce_613 {
+    40% {
+      transform: scale(1.4);
+    }
+
+    60% {
+      transform: scale(0.8);
+    }
+
+    80% {
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .btn-close:focus {
+    box-shadow: none;
+    border: none;
+  }
+
+  .btn_offcanvas {
+    background-color: #19314b;
+    border: none;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    margin: auto;
+    border-radius: 50%;
+    color: white;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .copy {
+    text-align: center;
+    color: white;
+    font-family:  var(--Plus_Jakarta);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+

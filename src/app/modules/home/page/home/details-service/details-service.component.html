@@ -1,0 +1,17 @@
+<div class="row m-0 d-flex justify-content-center details_service"  #targetSection>
+  <div class="col-11 row m-0  p-3 bg">
+    <div *ngFor="let card of data; let i = index" [class]="'col-sm-4 class_style'+(i+1)">
+      <p class="num_serv">{{ data[i].count }}</p>
+      <p class="Title_serv">
+        {{ card?.title }}
+      </p>
+      <p class="SubTitle_serv">
+        {{ card?.description }}
+      </p>
+    </div>
+  </div>
+  <!-- <div class="pattern"> -->
+  <!-- <img src="assets/image/home/img.svg" class="class1" alt="">
+  <img src="assets/image/home/img2.svg" class="class2" alt=""> -->
+  <!-- </div> -->
+</div>

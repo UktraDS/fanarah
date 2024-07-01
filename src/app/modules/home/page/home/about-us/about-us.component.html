@@ -1,0 +1,24 @@
+<div class="row m-0 d-flex justify-content-center About_us">
+  <div class="col-11 row m-0  p-1 p-sm-3">
+    <div class="col-12 col-sm-6 m-auto  p-1 p-sm-5 order_1">
+      <p class="Title_about">{{ data?.heading }}</p>
+      <div class="Desc_about">
+        {{ data?.description }}
+      </div>
+      <div class="sub_about">
+        <div *ngFor="let item of features">
+          <ng-container *ngIf="item.title !== false && item.description !== false">
+            <p class="Sub_title mt-4 mb-2">{{ item.title }}</p>
+            <div class="Sub_desc">
+              {{ item.description }}
+            </div>
+          </ng-container>
+        </div>
+        <button class="btn_Apply mt-4" routerLink="/About-us">Read More</button>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 p-0 p-sm-5 order_2">
+      <img [src]="data?.main_image" class="img_about" alt="">
+    </div>
+  </div>
+</div>

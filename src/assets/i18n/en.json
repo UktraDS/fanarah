@@ -1,0 +1,91 @@
+{
+  "header": {
+    "home": "Home",
+    "schools": "Schools",
+    "events": "Events & Gallery",
+    "about": "About us",
+    "contact": "Contact Us",
+    "all_right":"©All rights reserved, Uktra 2024."
+  },
+  "schedule": {
+    "name": "Fanerah School",
+    "desc": "Admission Enquiry",
+    "parentDetails": "Parent Details",
+    "parentFirstName": "parent first name",
+    "parentLastName": "parent last name",
+    "studentFirstName": "student first name",
+    "studentLastName": "student last name",
+    "phone": "Phone",
+    "email": "Email",
+    "studentDetails": "Student Details",
+    "studentDate": "Student Date Of Birth",
+    "day": "Day",
+    "month": "Month",
+    "year": "Year",
+    "gender": "Gender",
+    "siblings": "Siblings",
+    "male": "Male",
+    "female": "Female",
+    "yes":"Yes",
+    "no":"No",
+    "schoolDetails": "School details",
+    "grade": "Grade applying for",
+    "forTransfers": "For transferred students, please choose your current grade",
+    "previous": "For transferred students, please write the name of your current school",
+    "success": "Success",
+    "congratulations": "Congratulations, Application has been submitted successfully and we will reach you as soon as possible",
+    "done": "Done",
+    "Submit": "Submit",
+
+    "valid_FName":"Please enter your frist name.",
+    "valid_LName":"Please enter your last name.",
+    "valid_email":"Please enter a valid email.",
+    "valid_phone":"Please enter a valid phone number.",
+
+    "valid_SFName":"Please enter student frist name.",
+    "valid_SLName":"Please enter student last name.",
+
+    "valid_birth_date":"Please select student birth date.",
+    "valid_gender":"Please select student gender.",
+    "valid_siblings":"Please Select student siblings.",
+
+    "valid_grade_applying_for":"Please select student grade applying for.",
+    "valid_transfers_grade":"Please select student transfers grade.",
+    "valid_previous_school_name":"Please enter student previous school name."
+  },
+  
+  "key":"---",
+  "different":"Different departments",
+  "email_Sent":"Sent Successfully",
+  "email_invalid":"invalid Successfully",
+  "apply_Sent":"Apply Successfully",
+  "apply_invalid":"invalid Successfully",
+
+  "contact":{
+    "contactus":"Contact Us",
+    "contactDetails":"Connect with us now ",
+    "send" :"Send Now",
+    "name": "Enter your Full Name",
+    "email": "Enter your email",
+    "Phone": "Enter your phone",
+    "message":"Enter your message",
+    "students":"Students affairs",
+    "admissions":"admissions",
+    "finance":"Finance",
+    "complaints":"Complaints",
+    "valid_Name":"Please enter a valid Name.",
+    "valid_email":"Please enter a valid email.",
+    "valid_phone":"Please enter a valid phone number.",
+    "valid_Select":"Please selected Value.",
+    "valid_message":"Please enter a valid message.",
+    "lets":"Lets Get In Touch With Us",
+    "errorMess":"Please Fill All Presonal"
+  },
+  "global":{
+    "online":"Online Admission",
+     "news":"News",
+     "share":"Share :",
+     "read":"Read More",
+     "search":"Search Event"
+  }
+}

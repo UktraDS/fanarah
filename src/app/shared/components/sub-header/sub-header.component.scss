@@ -1,0 +1,27 @@
+@import "../../../../assets/style/main.scss";
+
+.header{
+    background-color: #6C3833;
+
+
+    .icon{
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+    }
+    .span{
+    color: rgba(227, 227, 227, 0.877);
+    font-size: 14px;
+    padding-top: 3px;
+    cursor: pointer;
+
+    }
+
+    .div_icon{
+        @include mobile-only{
+        justify-content: center !important;
+        gap: 2px;
+        }
+    }
+    
+}

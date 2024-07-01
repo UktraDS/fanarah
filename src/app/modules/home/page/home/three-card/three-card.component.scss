@@ -1,0 +1,62 @@
+@import "../../../../../../assets/style/main.scss";
+
+.three_card {
+  margin-top: 60px !important;
+  margin-bottom: 60px !important;
+
+  .cards_{
+    @include tablet-and-up {
+      width: 30% !important;
+    }
+    @include mobile-only {
+        width: 100% !important;
+      }
+      cursor: pointer;
+  }
+  .cards {
+    height: 100%;
+    @include tablet-and-up {
+      width: 100% !important;
+    }
+    @include mobile-only {
+        width: 100% !important;
+      }
+
+    box-shadow: 0 1px 1px rgba(153, 39, 39, 0.24),
+    0 1px 1px rgba(153, 39, 39, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+
+    .img_card {
+      width: 100%;
+      padding: 10px;
+    }
+
+    .title_card {
+      font-family: var(--Nunito);
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 32px;
+      color: black;
+      margin-bottom: 8px;
+      @include mobile-only {
+        font-size: 20px;
+      font-weight: 700;
+      }
+
+    }
+
+    .desc_card {
+      font-family: var(--Plus_Jakarta);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #737373;
+      margin-bottom: 8px;
+    }
+  }
+
+  .cards:hover {
+    box-shadow: 0 7px 18px rgba(153, 39, 39, 0.24), 0 5px 5px rgba(153, 39, 39, 0.24);
+  }
+}

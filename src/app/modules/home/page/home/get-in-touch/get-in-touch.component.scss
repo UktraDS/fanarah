@@ -1,0 +1,273 @@
+@import "../../../../../../assets/style/main.scss";
+
+.get_in {
+  background-image: url(../../../../../../assets/image/home/contact/background.svg);
+  width: 100%;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 555px;
+  position: relative;
+
+
+  .title {
+    font-family: var(--Nunito);
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 56px;
+    text-align: center;
+    color: black;
+    @include mobile-only{
+        font-size: 32px;
+        line-height: 43px;
+        margin-bottom: 50px;
+    }
+  }
+
+  .button_slider {
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #19314B;
+    width: 150px;
+    line-height: 45px;
+    background-color: #19314B;
+  }
+
+  .button_slider:hover {
+    color: #19314B;
+    transform: scale(1.1);
+    outline: 2px solid #19314B;
+    box-shadow: 4px 5px 17px -4px #19314B;
+  }
+
+  .button_slider::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    color: #19314B;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+  }
+
+  .button_slider:hover::before {
+    width: 250%;
+  }
+  .pattern1, .pattern2 ,.pattern3,.pattern4,.pattern5{
+   width: 120px;
+   position: absolute;
+
+  }
+  .pattern1{
+    top: 30%;
+    left: 10%;
+    width: 80px;
+    @include mobile-only{
+        top: 42%;
+        left: 10%;
+        width: 60px;
+    }
+  }
+  .pattern2{
+    top: 75%;
+    left: 5%;
+    width: 110px;
+    @include mobile-only{
+    top: 75%;
+    width: 80px;
+    }
+  }
+  .pattern3{
+    top: 15%;
+    left: 91%;
+    @include tablet-and-up {
+        left: 89%;
+    }
+    @include mobile-only{
+        left: 75%;
+        top: 12%;
+        width: 70px;
+    }
+  }
+  .pattern4{
+    top: 25%;
+    left: 67%;
+    @include mobile-only{
+        top: 50%;
+        left: 67%;
+        width: 80px;
+    }
+  }
+  .pattern5{
+    top: 84%;
+    left: 80%;
+    @include mobile-only{
+    left: 65%;
+    }  
+  }
+
+}
+.modal_style{
+  .modal-content {
+    max-width: 350px !important;
+    margin: auto !important;;
+  }
+
+  .modal-header {
+    border: none;
+
+  }
+
+  .modal-body {
+    padding: 30px;
+  }
+  .Title_h{
+    font-size: 25px;
+    color: #333F57;
+    font-weight: bold;
+  }
+
+  .modal-body .content-box {
+    border-radius: 11.5px;
+  }
+
+  form {
+    .form-group {
+      border-bottom: 1px solid #727272;
+      display: flex;
+      gap: 15px;
+      padding: 5px 10px;
+      align-items: center;
+      height: 60px;
+      margin-top: 20px;
+      border-radius: 15px;
+
+      p {
+        font-size: 20px;
+        color:  #333F57;
+        margin-bottom: 0px !important;
+      }
+
+      input {
+        border: none;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          font-family: var(--Nunito);
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          color: gray;
+        }
+      }
+
+      select{
+        width: 100%;
+        background-color: transparent;
+        font-family: var(--Nunito);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: gray;
+        border: none !important;
+
+        &:focus{
+          border: none !important;
+          outline: none !important;
+          border-color: none; 
+          outline: 0;
+          box-shadow: none;
+        }
+
+        &::placeholder {
+          font-family: var(--Nunito);
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          color: gray;
+        }
+      }
+
+    }
+
+    .form-group-textarea {
+      border-bottom: 1px solid  #333F57;
+      display: flex;
+      gap: 15px;
+      padding: 5px 10px;
+      margin-top: 20px;
+      border-radius: 15px;
+
+      p {
+        font-size: 20px;
+        color:  #333F57;
+        margin-bottom: 0px !important;
+      }
+
+      textarea {
+        border: none;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          font-family: var(--Nunito);
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          color: gray;
+        }
+      }
+
+    }
+  }
+
+
+  .modal-body button {
+    background-color: #333F57;
+    color: white;
+    padding: 10px 0;
+    border-radius: 11.5px;
+    margin-top: 1rem;
+    font-size: 20.1px;
+    width: 150px;
+    border: none;
+    position: relative;
+
+    .spinner-border{
+      top: 18%;
+      position: absolute;
+      left: 40%;
+    }  
+  }
+
+  .modal-header .btn-close {
+    background-color: #e5e5e5;
+    font-size: 9px;
+    color: #4F4F4F;
+    border-radius: 50%;
+    padding: 10px;
+    position: relative;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    z-index: 10;
+  }
+}

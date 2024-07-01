@@ -1,0 +1,61 @@
+<app-sub-header></app-sub-header>
+
+<div class="row m-0 d-flex justify-content-center schools_details">
+  <div class="col-11 row m-0  p-1 p-sm-3 m-auto d-flex justify-content-center">
+    <p class="title mt-4">{{data?.heading}}</p>
+
+    <div class="row m-0 d-flex justify-content-between">
+      <div class="col-12 col-sm-7 desc p-1 p-sm-2">
+        {{data?.description}}
+      </div>
+      <div class="col-12 col-sm-3 d-flex">
+        <div class="m-sm-auto mt-3 mt-0">
+          <button class="button" routerLink="/online-Admission"> <i class="fa-solid fa-calendar-days me-2 ms-2"></i>{{'global.online'|translate}}</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="details row m-0">
+      <div class="col-12 col-sm-6 p-3">
+        <img [src]="dataSchool?.image" class="w-100 h-100" style="max-height: 30rem;" alt="">
+      </div>
+      <div class="col-12 col-sm-6 p-3 m-auto">
+        <p class="Sub_title">{{'global.news'|translate}}</p>
+        <p class="title">{{dataSchool?.main_heading}}</p>
+        <p class="date">{{dataSchool?.updated_at!.split("T")[0]}}</p>
+        <div class="desc">
+          {{dataSchool?.main_description}}
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 p-3 crad_details mt-5">
+        <p class="title">{{dataSchool?.heading2}}</p>
+        <div class="desc">
+          {{dataSchool?.description2}}
+        </div>
+        <ul class="li">
+          <li *ngFor="let item of points">{{item}}</li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-6 p-3 crad_details mt-5">
+        <p class="title">{{dataSchool?.heading3}}</p>
+        <div class="desc">
+          {{dataSchool?.description3}}
+        </div>
+      </div>
+    </div>
+
+    <p class="Share mt-5">{{'global.share'|translate}}</p>
+    <div class="d-flex justify-content-center gap-3 mb-5 icon_social">
+    <ng-container *ngFor="let item of dataLink">
+      <a *ngIf="item?.title == 'Facebook'" [href]="item?.link"><i class="fa-brands fa-facebook"></i></a>
+      <a *ngIf="item?.title == 'Instagram'" [href]="item?.link"><i class="fa-brands fa-instagram"></i></a>
+      <a *ngIf="item?.title == 'Twitter'" [href]="item?.link"><i class="fa-brands fa-x-twitter"></i></a>
+      <a *ngIf="item?.title == 'Linkedin'" [href]="item?.link"><i class="fa-brands fa-linkedin"> </i></a>
+      <a *ngIf="item?.title == 'YouTube'" [href]="item?.link"><i class="fa-brands fa-youtube"> </i></a>
+    </ng-container>
+    </div>
+  <div>
+    <app-slider-school></app-slider-school>
+  </div>
+  </div>
+</div>

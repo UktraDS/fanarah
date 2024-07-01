@@ -1,0 +1,50 @@
+<app-sub-header></app-sub-header>
+
+<app-about-us></app-about-us>
+<app-young-generation></app-young-generation>
+
+<img src="assets/image/home/gallery/Union.svg" class="image" alt="">
+<div class="who_we">
+  <p class="title_who pt-5">{{dataWhoWe?.heading}}</p>
+  <div class="d-flex justify-content-center">
+    <div class="desc_who pb-5">
+      {{dataWhoWe?.description}}
+    </div>
+  </div>
+</div>
+<img src="assets/image/home/gallery/Union2.svg" class="image2" alt="">
+
+<div class="service_ mb-5">
+    <p class="title_who mt-5">Our Service</p>
+    <div class="service row m-0 d-flex justify-content-evenly">
+      <div class="col-12 col-sm-3 p-1 p-sm-3 mt-3 mt-sm-0" *ngFor="let item of dataOurService">
+        <div class="card">
+          <div class="icon">
+            <!-- <i class="fa-solid fa-school"></i> -->
+            <img [src]="item.icon" alt="" class="w-75">
+          </div>
+          <p class="title">{{item.title}}</p>
+          <p class="text">{{item.description}}</p>
+        </div>
+      </div>
+      <!-- <div class="col-12 col-sm-3 p-1 p-sm-3 mt-3 mt-sm-0">
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-bus"></i>
+          </div>
+          <p class="title">Title name</p>
+          <p class="text">Lorem ipsum dolor sit amet, consectetur</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-3 p-1 p-sm-3 mt-3 mt-sm-0">
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-book-open-reader"></i>
+          </div>
+          <p class="title">Title name</p>
+          <p class="text">Lorem ipsum dolor sit amet, consectetur</p>
+        </div>
+      </div> -->
+    
+    </div>
+</div>

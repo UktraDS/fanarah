@@ -1,0 +1,41 @@
+<div class="row m-0 d-flex justify-content-center three_card">
+  <div class="col-12 col-sm-3 p-3 p-sm-2 cards_" *ngFor="let item of data;let i =index">
+    <div class="cards row m-0">
+    <div class="col-3 m-auto">
+      <img [src]="data[i]?.icon" class="img_card" alt="">
+    </div>
+    <div class="col-9">
+      <p class="title_card mt-2">{{data[i]?.title}}</p>
+      <p class="desc_card">
+        {{data[i]?.description}}
+      </p>
+    </div>
+    </div>
+  </div>
+  <!-- <div class="col-12 col-sm-3 p-3 p-sm-2 cards_">
+    <div class="cards row m-0">
+    <div class="col-3 m-auto">
+      <img src="assets/image/home/three-card/Group2.svg" class="img_card" alt="">
+    </div>
+    <div class="col-9">
+      <p class="title_card mt-2">Individual Attention</p>
+      <p class="desc_card">
+        We engage all fanarians in an academically rigorous education and challenge the to achieve their personal best.
+      </p>
+    </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-3 p-3 p-sm-2 cards_">
+    <div class="cards row m-0">
+      <div class="col-3 m-auto">
+        <img src="assets/image/home/three-card/Group3.svg" class="img_card" alt="">
+      </div>
+      <div class="col-9">
+        <p class="title_card mt-2">Flexible Schedule</p>
+        <p class="desc_card">
+          We offer a flexible and stimulating curriculum, supported by excellent resources and training.
+        </p>
+      </div>
+    </div>
+  </div> -->
+</div>

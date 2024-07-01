@@ -1,0 +1,43 @@
+<div class="slider_schools">
+
+  <p class="title mt-3">UPCOMING EVENTS</p>
+  <div class="desc mb-4">feel the presence of the Almighty, who formed us in his own image, and the breath.</div>
+
+  <div class="keen-slider" #sliderRef>
+
+  <div *ngFor="let item of dataSchool" class="keen-slider__slide number-slide1">
+    <div class="post-slide">
+      <div class="post-img">
+        <img [src]="item?.image" alt="">
+        <a (click)="changeRouterLinkOrNavigateToSection(item.id)" class="over-layer"><i class="fa fa-link"></i></a>
+      </div>
+      <div class="post-content">
+        <h3 class="post-title">
+          <a (click)="changeRouterLinkOrNavigateToSection(item.id)">{{item?.title}}</a>
+        </h3>
+        <div class="d-flex justify-content-between row m-0">
+          <div class="col-6">
+            <span class="post-date"><i class="fa fa-clock-o pe-2 ps-2"></i>{{item?.updated_at!.split("T")[0]}}</span>
+          </div>
+          <div class="col-6 d-flex justify-content-end">
+            <a (click)="changeRouterLinkOrNavigateToSection(item.id)" class="read-more">read more</a>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+  </div>
+
+  <div class="row m-0 d-flex justify-content-center">
+    <div class="col-6 d-flex justify-content-center ">
+      <p class="d-flex">
+        <span class="icon_size_slidOne">
+          <i class="fa-regular fa-circle-dot ms-2 me-2" (click)="goToPrevSlide()"></i>
+        </span>
+        <span class="icon_size_slidTwo">
+          <i class="fa-regular fa-circle-dot ms-2 me-2" (click)="goToNextSlide()"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>

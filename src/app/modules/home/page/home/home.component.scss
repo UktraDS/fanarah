@@ -1,0 +1,106 @@
+@import "../../../../../assets/style/main.scss";
+
+.bg_div {
+  .bg {
+    position: relative;
+    background-image: url(../../../../../assets/image/home/Subtract.svg);
+    width: 100% !important;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 960px;
+    @include tablet-and-up {
+      height: 700px;
+    }
+    @include mobile-only{
+      height: 850px;
+    }
+  }
+
+  .body {
+    position: absolute;
+    top: 0;
+
+    .welcome {
+      font-family: var(--Nunito);
+      font-size: 80px;
+      font-weight: 800;
+      line-height: 72px;
+      color: white;
+      // text-align: center;
+      display: flex;
+      width: 70%;
+
+      @include tablet-and-up {
+        font-size: 64px;
+        line-height: 68px;
+        width: 70%;
+
+      }
+      @include mobile-only{
+        font-size: 29px;
+        line-height: 36px;
+        margin-top: 25px;
+        text-align: start;
+        padding-right: 40px;
+        padding-left: 40px;
+        width: 100%;
+    
+      }
+    }
+
+    .Desc {
+      font-family: var(--DM_Sans);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+      color: white;
+      width: 67%;
+      display: flex;
+      @include mobile-only{
+        width: 78%;
+      }
+    }
+
+    .btn_Apply {
+      font-family: var(--Plus_Jakarta);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      color: white;
+      background-color: #19314B;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-left: 144px;
+      margin-right: 144px;
+
+      @include tablet-and-up {
+        margin-left: 115px;
+        margin-right: 115px;
+      }
+      @include mobile-only{
+        margin-left: 45px;
+        margin-right: 45px;
+      }
+    }
+
+    .pattern {
+      .pattern1 {
+        position: absolute;
+        width: 90px;
+
+      }
+      .pattern2 {
+        position: absolute;
+        width: 90px;
+
+      }
+      .pattern3 {
+        position: absolute;
+        width: 90px;
+
+      }
+    }
+  }
+}

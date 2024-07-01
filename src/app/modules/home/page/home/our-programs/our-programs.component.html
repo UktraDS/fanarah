@@ -1,0 +1,20 @@
+<img src="assets/image/home/our-programs/Union.svg" class="image" alt="">
+<div class="row m-0 d-flex justify-content-center our_programs">
+  <div class="col-11 row m-0  p-1 p-sm-3 m-auto d-flex justify-content-center">
+    <p class="Title_programs">{{data?.heading}}</p>
+    <div class="desc_programs">
+      {{data?.description}}
+    </div>
+    <div class="crads row m-0 d-flex justify-content-center mt-5">
+      <div class="col-12 col-sm-3 p-1 p-sm-3 crad_wight" *ngFor="let item of programs">
+        <div class="card">
+          <p class="title mt-3">{{item?.age}}</p>
+          <p class="desc mt-3">{{item?.title}}</p>
+          <div class="sub_desc mt-3">{{item?.description}}</div>
+          <button class="button mt-3">{{item?.btn}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<img src="assets/image/home/our-programs/Union2.svg" class="image2" alt="">

@@ -1,0 +1,39 @@
+    <div class="row m-0 d-flex justify-content-center hero_discover">
+      <div class="col-11 row m-0  p-3 m-auto">
+        <p class="title_hero">{{ data?.heading }}</p>
+
+        <div class="desc_hero">
+          {{ data?.description }}
+        </div>
+
+        <div class="keen-slider list-unstyled pe-0 ps-0 sub_card" #sliderRef >
+          <!-- <ng-container *ngIf="teachers.length > 0"> -->
+            <div *ngFor="let item of teachers;" class="keen-slider__slide">
+              <div class="pt-2 pt-sm-5">
+                <img [src]="item.image" class="w-100 img_card" alt="">
+              </div>
+              <div class="row m-0 d-flex justify-content-center mt-4">
+                <div class="col-12 m-auto">
+                  <div class="title mt-3">{{ item?.name }}</div>
+                  <div class="sub">{{ item?.job_title }}</div>
+                </div>
+              </div>
+            </div>
+          <!-- </ng-container> -->
+        </div>
+
+        <div class="row m-0 d-flex justify-content-center">
+          <div class="col-6 d-flex justify-content-center mt-5">
+            <p class="d-flex">
+              <span class="icon_size_slidOne">
+                <i class="fa-solid fa-circle ms-2 me-2" (click)="goToNextSlide()"></i>
+              </span>
+              <span class="icon_size_slidTwo">
+                <i class="fa-solid fa-circle ms-2 me-2" (click)="goToPrevSlide()"></i>
+              </span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>

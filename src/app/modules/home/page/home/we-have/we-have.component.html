@@ -1,0 +1,28 @@
+<div class="row m-0 d-flex justify-content-center We_have">
+    <div class="col-11 row m-0  p-3">
+        <div class="col-12 col-sm-6 d-flex">
+            <p class="Title_we m-auto">{{dataWehave?.heading.split('@')[0]}} <span>{{dataWehave?.heading.split('@')[1]}}</span></p>
+        </div>
+        <div class="col-12 col-sm-6">
+            <p class="Sub_title">{{dataWehave?.description}}</p>
+            <div class="row m-0 sub_card">
+                <div class="col-12 col-sm-6 mt-3" style="text-align: start;" *ngFor="let item of features">
+                    <i class="fa-solid fa-check"></i> {{item?.title}}
+                </div>
+                <!-- <div class="col-12 col-sm-6 mt-3" style="text-align: start;">
+                    <i class="fa-solid fa-check"></i> Individual Attentions
+                </div>
+                <div class="col-12 col-sm-6 mt-3" style="text-align: start;">
+                    <i class="fa-solid fa-check"></i> professional teachers
+                </div>
+                <div class="col-12 col-sm-6 mt-3" style="text-align: start;">
+                    <i class="fa-solid fa-check"></i> flexile attention
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <app-video-home  [dataWehave]="dataWehave"></app-video-home>
+    </div>
+</div>

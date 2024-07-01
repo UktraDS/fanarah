@@ -1,0 +1,16 @@
+<div class="row m-0 d-flex justify-content-center our_houses" id="Schools">
+  <div class="col-11 row m-0  p-1 p-sm-3 m-auto d-flex justify-content-center">
+    <p class="title mb-5 pb-5 mb-sm-2 pb-sm-2">{{ data?.heading }}</p>
+
+    <div class="col-12 col-sm-8 row m-0 d-flex justify-content-evenly">
+
+      <div class="col-12 col-sm-5 card_style mb-5"  [ngClass]="'order_'+i" *ngFor="let item of houses;let i = index">
+        <div class="card"  [ngClass]="'crad'+i"
+          [ngStyle]="{ 'background-image': 'url('+item.image+')'}">
+          <p class="heading"  [ngClass]="'heading'+i">{{ item.title }} &nbsp; <span>{{ item.points }}</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+@import "../../../../../../assets/style/main.scss";
+
+
+.hero_discover {
+  background-image: url(../../../../../../assets/image/home/hero/Union.svg);
+  width: 100% !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 920px;
+
+  @include mobile-only{
+    height:auto !important;
+    background-position: center;
+
+  }
+  .title_hero {
+    font-family: var(--Baloo);
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 59px;
+    text-align: center;
+    color: white;
+    @include mobile-only{
+    font-size: 37px;
+    line-height: 52px;
+    margin-top: 45px;
+    }
+  }
+
+  .desc_hero {
+    font-family: Open Sans;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+  }
+
+  .sub_card {
+    cursor: pointer;
+
+    .img_card {
+      border-radius: 100% 0% 100% 0%/20% 100% 0% 68%;
+      @include mobile-only{
+        height: 350px !important;
+      }
+    }
+
+    .title {
+      font-family: var(--Plus_Jakarta);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: center;
+      color: white;
+    }
+
+    .sub {
+      font-family: var(--Plus_Jakarta);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      text-align: center;
+      color: white;
+    }
+  }
+
+
+  .keen-slider__slide {
+    z-index: 1;
+    overflow: visible;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .icon_size_slidOne {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    order: 2;
+
+    i {
+      font-size: 15px;
+    }
+  }
+
+  .icon_size_slidTwo {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    order: 1;
+
+    i {
+      font-size: 15px;
+    }
+  }
+
+  .icon_size_slidTwo:hover,
+  .icon_size_slidOne:hover {
+    color: green;
+  }
+
+}

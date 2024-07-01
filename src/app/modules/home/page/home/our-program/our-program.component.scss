@@ -1,0 +1,81 @@
+@import "../../../../../../assets/style/main.scss";
+
+.Our_program {
+  .title_our {
+    font-family: var(--Nunito);
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 56px;
+    text-align: center;
+    color: black;
+    @include mobile-only{
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+
+  .Subtitle_our {
+    font-family: var(--Plus_Jakarta);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(115, 115, 115, 1);
+  }
+
+  .cards {
+    .card {
+      padding: 27px;
+      border: 1px rgb(226, 226, 226) solid;
+      border-radius: 20px;
+      transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+      @include tablet-and-up {
+        padding: 20px;
+
+      }
+
+      i {
+        color: rgba(23, 23, 23, 1);
+        font-size: 45px;
+      }
+      img{
+        width: 60px;
+      }
+
+      .title_card {
+        font-family: var(--Nunito);
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 40px;
+        color: rgba(23, 23, 23, 1);
+        margin-bottom: 5px;
+        @include mobile-only{
+          font-size: 25px;
+        }
+      }
+
+      .Subtitle_card {
+        font-family: var(--Plus_Jakarta);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: rgba(115, 115, 115, 1);
+      }
+    }
+    .card:hover{
+        background-color: rgba(108, 56, 51, 1);
+        box-shadow: 30px 33px 86px 0px rgba(255, 133, 0, 0.2);
+
+        cursor: pointer;
+        i{
+            color: white;
+        }
+        .title_card{
+            color: white;
+        }
+        .Subtitle_card{
+            color: white;
+        }
+    }
+  }
+}

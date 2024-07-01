@@ -1,0 +1,18 @@
+<div class="row m-0 d-flex justify-content-center Our_program">
+    <div class="col-11 row m-0  p-3">
+        <p class="title_our">{{data?.heading}}</p>
+        <p class="Subtitle_our">{{data?.description}}</p>
+        <div class="cards row m-0 d-flex justify-content-between">
+            <div class="col-12 col-sm-4 p-1 p-sm-3" *ngFor="let item of programs">
+                <div class="card">
+                    <div>
+                        <!-- <i class="fa-solid fa-graduation-cap"></i> -->
+                        <img [src]="item?.icon" alt="">
+                    </div>
+                    <p class="title_card mt-3">{{item?.title}}</p>
+                    <p class="Subtitle_card">{{item?.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,147 @@
+@import "../../../../../../assets/style/main.scss";
+
+.image {
+  width: 100%;
+  height: 60px !important;
+  position: relative;
+  top: 10px;
+  @include tablet-and-up {
+    height: 50px !important;
+  }
+  @include mobile-only{
+    top: 15px;
+    height: 40px !important;
+
+  }
+}
+
+.image2 {
+  width: 100%;
+  height: 60px !important;
+  position: relative;
+  top: -10px;
+  @include tablet-and-up {
+    height: 50px !important;
+  }
+  @include mobile-only{
+    top: -15px;
+    height: 40px !important;
+  }
+}
+
+.our_programs {
+  background-color: #333F57;
+
+  .Title_programs {
+    font-family: var(--Baloo);
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 59px;
+    text-align: center;
+    color: white;
+    @include mobile-only{
+      font-size: 35px;
+    }
+  }
+
+  .desc_programs {
+    font-family: Open Sans;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    @include tablet-and-up {
+      width: 60%;
+    }
+    @include mobile-only{
+      width: 100%;
+      font-size: 15px;
+    }
+  }
+
+  .crads {
+    .crad_wight{
+      @include tablet-and-up {
+        width: 33%;
+      }
+      @include mobile-only{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+    .card {
+      border: 1px solid white;
+      background-color: transparent;
+      border-radius: 35px;
+      transform: rotate(3deg) skew(4deg, -7deg);
+      padding: 45px;
+
+      .title {
+        font-family: var(--Plus_Jakarta);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: white;
+        transform: rotate(0deg) skew(0deg, 5deg);
+
+      }
+
+      .desc {
+        font-family: var(--Nunito);
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 32px;
+        color: white;
+        transform: rotate(0deg) skew(0deg, 5deg);
+
+      }
+
+      .sub_desc {
+        font-family: var(--Plus_Jakarta);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: white;
+        transform: rotate(0deg) skew(0deg, 5deg);
+
+      }
+
+      .button {
+        background-color: transparent;
+        color: white;
+        width: 130px;
+        font-family: var(--Plus_Jakarta);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 40px;
+        border-radius: 10px;
+        border: 1px white solid;
+        transform: rotate(0deg) skew(0deg, 5deg);
+      }
+
+    }
+    .card:hover{
+      background-color: white;
+      cursor: pointer;
+      .title {
+      color: #333F57;
+      }
+      .desc {
+      color: #333F57;
+      }
+      .sub_desc {
+        color: #333F57;
+      }
+      .button {
+        border: 1px #333F57 solid;
+        color: white;
+        background-color: #333F57;
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+@import "../../../../../assets/style/main.scss";
+
+.schools_details {
+  .title {
+    font-family: var(--Nunito);
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 41px;
+    color: black;
+
+    @include mobile-only {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+
+  .desc {
+    font-family: var(--DM_Sans);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 1px;
+    color: #999999;
+
+    @include mobile-only {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  .button {
+    background: rgba(108, 56, 51, 1);
+    border-radius: 20px;
+    border: none;
+    color: var(--white);
+    padding: 10px 25px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.06em;
+  }
+
+
+  .details {
+    .Sub_title {
+      font-family: var(--Nunito);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 20px;
+      letter-spacing: 1px;
+      color: #6C3833;
+      border-bottom: 2px solid #6C3833;
+      width: max-content;
+    }
+
+    .title {
+      font-family: var(--Nunito);
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 66px;
+      color: black;
+      display: flex;
+      width: 85%;
+
+      @include mobile-only {
+        font-size: 30px;
+        width: 100%;
+        line-height: 50px;
+      }
+    }
+
+    .date {
+      font-family: var(--Nunito);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 14.4px;
+      letter-spacing: 1px;
+      color: #455563;
+    }
+
+    .desc {
+      font-family: var(--Nunito);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #999999;
+    }
+  }
+
+  .crad_details {
+    .title {
+      font-family: var(--Nunito);
+      font-size: 35px;
+      font-weight: 700;
+      line-height: 44px;
+      color: #6C3833;
+
+      @include mobile-only {
+        font-size: 25px;
+        line-height: 30px;
+      }
+    }
+
+    .desc {
+      font-family: var(--Nunito);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #999999;
+    }
+
+    .li {
+      li {
+        font-family: var(--Nunito);
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #999999;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .Share {
+    font-family: var(--Nunito);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16.8px;
+    letter-spacing: 1px;
+    color: rgba(5, 25, 40, 1);
+    text-align: center;
+  }
+  .icon_social{
+    i{
+      font-size: 20px;
+      cursor: pointer;
+      color: rgb(29, 29, 29);
+    }
+    i:hover{
+      font-size: 24px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<app-sub-header></app-sub-header>
+
+<div class="row m-0 d-flex justify-content-center schools">
+  <div class="col-11 row m-0  p-1 p-sm-3 m-auto d-flex justify-content-center">
+    <p class="title mt-4">{{dataSchool?.heading}}</p>
+
+    <div class="row m-0 d-flex justify-content-between">
+      <div class="col-12 col-sm-7 desc p-1 p-sm-2">
+        {{dataSchool?.description}}
+      </div>
+      <div class="col-12 col-sm-3 d-flex">
+        <div class="m-sm-auto mt-3 mt-0">
+          <button class="button" routerLink="/online-Admission"> <i class="fa-solid fa-calendar-days me-2 ms-2"></i>{{'global.online'|translate}}</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="schools_ row m-0 d-flex justify-content-evenly mt-5">
+        <div class="col-4 card_style mt-5 me-2 ms-2" *ngFor="let item of dataSchool?.news">
+            <div class="card" [ngStyle]="{ 'background-image': 'url('+item?.image+')'}" >
+                <p class="heading">{{item?.title}}</p>
+                <div class="overlay"></div>
+                <button class="card-btn" [routerLink]="'/Schools-Details/'+item?.id">{{'global.read'|translate}}</button>
+              </div>              
+        </div>
+        <!-- <div class="col-4 card_style mt-5 me-2 ms-2">
+            <div class="card" style="background-image: url(assets/image/schools/img2.jpg);">
+                <p class="heading">KINDERGARTEN DEPARTMENT</p>
+                <div class="overlay"></div>
+                <button class="card-btn" routerLink="/Schools-Details/2">Read More</button>
+              </div>              
+        </div>
+        <div class="col-4 card_style mt-5 me-2 ms-2">
+            <div class="card" style="background-image: url(assets/image/schools/img3.jpg);">
+                <p class="heading">PRIMARY DEPARTMENT</p>
+                <div class="overlay"></div>
+                <button class="card-btn" routerLink="/Schools-Details/3">Read More</button>
+              </div>              
+        </div>
+        <div class="col-4 card_style mt-5 me-2 ms-2">
+            <div class="card" style="background-image: url(assets/image/schools/img4.jpg);">
+                <p class="heading">PREPARATORY AND SECONDARY DEPARTMENT</p>
+                <div class="overlay"></div>
+                <button class="card-btn" routerLink="/Schools-Details/4">Read More</button>
+              </div>              
+        </div> -->
+    </div>
+
+  </div>
+</div>

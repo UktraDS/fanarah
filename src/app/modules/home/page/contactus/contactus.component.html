@@ -1,0 +1,134 @@
+<app-sub-header></app-sub-header>
+
+<div class="row m-0 d-flex justify-content-center contactUs">
+  <div class="col-12 row m-0  p-1 p-sm-3">
+    <div class="card" style="background-image: url(assets/image/contactUs/img1.jpg);">
+      <p class="heading">{{ 'contact.contactus' | translate }}</p>
+    </div>
+  </div>
+  <div class="col-11 row m-0  p-1 p-sm-3 d-flex justify-content-between">
+    <div class="col-12 col-sm-5 p-1 p-sm-3 form_">
+      <form class="m-auto" [formGroup]="formGroup">
+
+        <div class="row">
+          <p class="title_contact">{{ 'contact.contactus' | translate }}</p>
+          <div class="desc_contact">
+            {{ 'contact.contactDetails' | translate }}
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group ">
+              <p><i class="fa-solid fa-user"></i></p>
+              <input type="text" placeholder="{{ 'contact.name'|translate }}"
+                formControlName="name">
+            </div>
+            <div *ngIf="formGroup.get('name')?.invalid && formGroup.get('name')?.touched" class="text-danger">
+              {{ 'contact.valid_Name'| translate }}
+            </div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group  ">
+              <p><i class="fa-solid fa-envelope"></i></p>
+              <input type="text" placeholder="{{ 'contact.email'|translate }}"
+                formControlName="email">
+            </div>
+            <div
+              *ngIf="formGroup.get('email')?.invalid  &&  ( formGroup.get('email')?.touched || formGroup.get('email')?.hasError('emailPattern') )"
+              class="text-danger">
+              {{ 'contact.valid_email'| translate }}
+            </div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <div class="form-group form-group_">
+              <p><i class="fa-solid fa-phone"></i></p>
+              <input type="text" placeholder="{{ 'contact.Phone'|translate }}"
+                formControlName="phone" maxlength="11">
+            </div>
+            <div
+              *ngIf="formGroup.get('phone')?.invalid && (formGroup.get('phone')?.hasError('pattern') || formGroup.get('phone')?.touched)"
+              class="text-danger">
+              {{ 'contact.valid_phone'| translate }}
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 ">
+            <div class="d-flex justify-content-end">
+              <div class="form-group  form-group_">
+                <p><i class="fa-solid fa-building-user"></i></p>
+                <select class="form-select" aria-label="Default select example" formControlName="department"
+                  (change)="checkType()">
+                  <option disabled [value]="'different'|translate">{{ 'different'|translate }}
+                  </option>
+                  <option [value]="'contact.students'|translate">{{ 'contact.students'|translate }}
+                  </option>
+                  <option [value]="'contact.admissions'|translate">
+                    {{ 'contact.admissions'|translate }}</option>
+                  <option [value]="'contact.finance'|translate">{{ 'contact.finance'|translate }}
+                  </option>
+                  <option [value]="'contact.complaints'|translate">
+                    {{ 'contact.complaints'|translate }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end">
+              <div *ngIf="formGroup.get('department')?.invalid && formGroup.get('department')?.touched"
+                class="text-danger  form-group_">
+                {{ 'contact.valid_Select'| translate }}
+              </div>
+              <div *ngIf="hide" class="text-danger  form-group_">
+                {{ 'contact.valid_Select'| translate }}
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group-textarea">
+              <p><i class="fa-solid fa-envelope"></i></p>
+              <textarea id="message" rows="5" placeholder="{{ 'contact.message'|translate }}"
+                formControlName="message"></textarea>
+            </div>
+            <div *ngIf="formGroup.get('message')?.invalid && formGroup.get('message')?.touched"
+              class="text-danger mb-5">
+              {{ 'contact.valid_message'| translate }}
+            </div>
+          </div>
+
+          <div class="alert alert-danger" role="alert" *ngIf="formGroup.invalid && formGroup.touched && errorMess != ''"
+            class="text-danger">{{ errorMess |translate }}
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="submit" (click)="submit()">
+              <div class="spinner-border" role="status" *ngIf="isloading">
+              </div>
+              {{ 'contact.send' | translate }}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-12 col-sm-5 p-1 p-sm-3 mt-5 mt-sm-0 details_">
+      <p class="title_contact">{{ data?.heading }}</p>
+      <div class="desc_contact">
+        {{ data?.description }}
+      </div>
+      <div class="row m-0">
+        <div class="groups col-12 col-sm-6">
+          <h5>{{ data?.title_main_email }}</h5>
+          <p class="section-desc mt-2"><i class="fa-solid fa-envelope pe-2 ps-2"></i> {{ data?.main_email }}</p>
+          <p class="section-desc mt-2"><i class="fa-solid fa-envelope pe-2 ps-2"></i> {{ data?.secondary_email }}</p>
+        </div>
+        <div class="groups col-12 col-sm-6">
+          <h5>{{ data?.title_main_phone_number }}</h5>
+          <p class="section-desc mt-2"><i class="fa-solid fa-phone pe-2 ps-2"></i> {{ data?.mian_phone_number }}</p>
+          <p class="section-desc mt-2"><i class="fa-solid fa-phone pe-2 ps-2"></i> {{ data?.secondary_phone_number }}
+          </p>
+        </div>
+        <div class="groups col-12">
+          <h5>{{ data?.title_address }}</h5>
+          <!-- <p class="section-desc mt-2"><i class="fa-solid fa-map pe-2 ps-2"></i> Al Toubah Mosque Alley 3-Fardous City 6th October, Giza-Egypt</p> -->
+          <video muted src="assets/image/contactUs/VID.mp4" autoplay controls type="video/mp4"
+            class="Video_style"></video>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

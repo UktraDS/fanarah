@@ -1,0 +1,169 @@
+<app-sub-header></app-sub-header>
+
+<div class="row m-0 d-flex justify-content-center events_gallery">
+
+  <div class="col-11 row m-0  p-1 p-sm-3 m-auto d-flex justify-content-center">
+    <p class="title mt-4">{{ dataEvent?.heading }}</p>
+    <div class="row m-0 d-flex justify-content-between">
+      <div class="col-12 col-sm-7 desc p-1 p-sm-2">
+        {{ dataEvent?.description }}
+      </div>
+      <div class="col-12 col-sm-3 d-flex">
+        <div class="m-sm-auto mt-3 mt-0">
+          <button class="button" routerLink="/online-Admission"> <i
+              class="fa-solid fa-calendar-days me-2 ms-2"></i>{{ 'global.online'|translate }}</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="activeProduct">
+      <div class="row m-0 mt-3 mt-sm-5">
+        <div class="col-12 col-sm-7 row m-0 order_1 mt-2 mt-sm-5">
+          <div *ngFor="let model of dataEvent?.categories" class="col-3 tets" (click)="changeActiveModel(model.id)">
+            <div [class.active]="activeModel.id == model.id" class="btn btn_Models">{{ model.name }}</div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-5 search d-flex justify-content-end order_2">
+          <form class="d-flex p-0" role="search">
+            <input class="form-control Search_style m-auto" type="search"
+              placeholder="{{ 'global.search'|translate }}" aria-label="Search">
+            <button class="btn text-light ps-0 pe-0 button_div" type="submit">
+              <i class="fas fa-search button_"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <div class="row m-0">
+          <ng-container *ngFor="let columnIndex of [0, 1, 2]">
+            <div class="col-12 col-sm-4">
+              <ng-container *ngIf="activeModel?.activities && activeModel.activities.length > 0">
+
+                <ng-container *ngIf="activeModel.activities.length >= 19 && activeModel.activities.length < 22">
+                  <ng-container
+                    *ngFor="let activityIndex of [columnIndex * 7, columnIndex * 7 + 1, columnIndex * 7 + 2, columnIndex * 7 + 3, columnIndex * 7 + 4, columnIndex * 7 + 5, columnIndex * 7 + 6]">
+                    <div *ngIf="activeModel?.activities[activityIndex] as activity" class="m-auto">
+                      <ng-container *ngIf="activity.media_type === 'image'">
+                        <img [src]="activity.image" class="img-fluid p-2 img_size">
+                      </ng-container>
+                      <ng-container  *ngIf="activity.media_type === 'video'"  >
+                        <ng-container *ngFor="let item of url ;let i = index ">
+                          <iframe class="Video_style" [src]="item" autoplay controls *ngIf="activity.iframe_video == item.changingThisBreaksApplicationSecurity"
+                            loading></iframe>
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                  </ng-container>
+                </ng-container>
+
+                <ng-container *ngIf="activeModel.activities.length >= 16 && activeModel.activities.length < 19">
+                  <ng-container
+                    *ngFor="let activityIndex of [columnIndex * 6, columnIndex * 6 + 1, columnIndex * 6 + 2, columnIndex * 6 + 3, columnIndex * 6 + 4, columnIndex * 6 + 5]">
+                    <div *ngIf="activeModel?.activities[activityIndex] as activity" class="m-auto">
+                      <ng-container *ngIf="activity.media_type === 'image'">
+                        <img [src]="activity.image" class="img-fluid p-2 img_size">
+                      </ng-container>
+                      <ng-container  *ngIf="activity.media_type === 'video'"  >
+                        <ng-container *ngFor="let item of url ;let i = index ">
+                          <iframe class="Video_style" [src]="item" autoplay controls *ngIf="activity.iframe_video == item.changingThisBreaksApplicationSecurity"
+                            loading></iframe>
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                  </ng-container>
+                </ng-container>
+
+                <ng-container *ngIf="activeModel.activities.length >= 13 && activeModel.activities.length < 16">
+                  <ng-container
+                    *ngFor="let activityIndex of [columnIndex * 5, columnIndex * 5 + 1, columnIndex * 5 + 2, columnIndex * 5 + 3, columnIndex * 5 + 4]">
+                    <div *ngIf="activeModel?.activities[activityIndex] as activity" class="m-auto">
+                      <ng-container *ngIf="activity.media_type === 'image'">
+                        <img [src]="activity.image" class="img-fluid p-2 img_size">
+                      </ng-container>
+                      <ng-container  *ngIf="activity.media_type === 'video'"  >
+                        <ng-container *ngFor="let item of url ;let i = index ">
+                          <iframe class="Video_style" [src]="item" autoplay controls *ngIf="activity.iframe_video == item.changingThisBreaksApplicationSecurity"
+                            loading></iframe>
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                  </ng-container>
+                </ng-container>
+
+                <ng-container *ngIf="activeModel.activities.length >= 10 && activeModel.activities.length < 13">
+                  <ng-container
+                    *ngFor="let activityIndex of [columnIndex * 4, columnIndex * 4 + 1, columnIndex * 4 + 2, columnIndex * 4 + 3]">
+                    <div *ngIf="activeModel?.activities[activityIndex] as activity" class="m-auto">
+                      <ng-container *ngIf="activity.media_type === 'image'">
+                        <img [src]="activity.image" class="img-fluid p-2 img_size">
+                      </ng-container>
+                      <ng-container  *ngIf="activity.media_type === 'video'"  >
+                        <ng-container *ngFor="let item of url ;let i = index ">
+                          <iframe class="Video_style" [src]="item" autoplay controls *ngIf="activity.iframe_video == item.changingThisBreaksApplicationSecurity"
+                            loading></iframe>
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                  </ng-container>
+                </ng-container>
+
+                <ng-container *ngIf="activeModel.activities.length >= 7 && activeModel.activities.length < 10">
+                  <ng-container
+                    *ngFor="let activityIndex of [columnIndex * 3, columnIndex * 3 + 1, columnIndex * 3 + 2]">
+                    <div *ngIf="activeModel?.activities[activityIndex] as activity" class="m-auto">
+                      <ng-container *ngIf="activity.media_type === 'image'">
+                        <img [src]="activity.image" class="img-fluid p-2 img_size">
+                      </ng-container>
+                      <ng-container  *ngIf="activity.media_type === 'video'"  >
+                        <ng-container *ngFor="let item of url ;let i = index ">
+                          <iframe class="Video_style" [src]="item" autoplay controls *ngIf="activity.iframe_video == item.changingThisBreaksApplicationSecurity"
+                            loading></iframe>
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                  </ng-container>
+                </ng-container>
+
+                <ng-container *ngIf="activeModel.activities.length >= 4 && activeModel.activities.length < 7">
+                  <ng-container
+                    *ngFor="let activityIndex of [columnIndex * 2, columnIndex * 2 + 1]">
+                    <div *ngIf="activeModel?.activities[activityIndex] as activity" class="m-auto">
+                      <ng-container *ngIf="activity.media_type === 'image'">
+                        <img [src]="activity.image" class="img-fluid p-2 img_size">
+                      </ng-container>
+                      <ng-container  *ngIf="activity.media_type === 'video'"  >
+                        <ng-container *ngFor="let item of url ;let i = index ">
+                          <iframe class="Video_style" [src]="item" autoplay controls *ngIf="activity.iframe_video == item.changingThisBreaksApplicationSecurity"
+                            loading></iframe>
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                  </ng-container>
+                </ng-container>
+
+                <ng-container *ngIf="activeModel.activities.length < 4">
+                  <ng-container *ngFor="let activityIndex of [columnIndex * 1]">
+                    <div *ngIf="activeModel?.activities[activityIndex] as activity" class="m-auto">
+                      <ng-container *ngIf="activity.media_type === 'image'">
+                        <img [src]="activity.image" class="img-fluid p-2 img_size">
+                      </ng-container>
+                      <ng-container  *ngIf="activity.media_type === 'video'"  >
+                        <ng-container *ngFor="let item of url ;let i = index ">
+                          <iframe class="Video_style" [src]="item" autoplay controls *ngIf="activity.iframe_video == item.changingThisBreaksApplicationSecurity"
+                            loading></iframe>
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                  </ng-container>
+                </ng-container>
+
+              </ng-container>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="bg_div m-0">
+    <div class="bg">
+        <!-- <img src="assets/image/home/Subtract.svg" class="w-100 p-0" alt=""> -->
+    </div>
+    <div class="m-0 row body">
+        <app-header  class="d-flex justify-content-center mt-5 w-100"></app-header>
+    
+       <div class="col-12 col-sm-7 d-flex justify-content-center">
+        <div class="m-auto">
+            <div class="d-flex justify-content-center">
+                <p class="welcome">{{data?.title}}</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="Desc">{{data?.description}}</p>
+            </div>
+            <div class="w-100 mt-3">
+                <button class="btn_Apply" routerLink="/online-Admission">{{data?.button_name}}</button>
+            </div>
+        </div>
+       </div>
+       <div class="col-12 col-sm-5">
+        <img [src]="data?.image" class="w-100 h-100 boy " alt="">
+       </div>
+       <div class="pattern">
+        <img src="assets/image/pattern/Frame.png" class="pattern1" alt="">
+        <img src="assets/image/pattern/Frame2.png" class="pattern2" alt="">
+        <img src="assets/image/pattern/Frame 3.png" class="pattern3" alt="">
+       </div>
+    </div>
+</div>
+
+<app-three-card></app-three-card>
+<app-we-have></app-we-have>
+<app-our-program></app-our-program>
+<app-details-service></app-details-service>
+<app-about-us></app-about-us>
+<app-young-generation></app-young-generation>
+<app-hero-discover></app-hero-discover>
+<app-our-houses></app-our-houses>
+<app-our-programs></app-our-programs>
+<app-happy-clients></app-happy-clients>
+<app-gallery-events></app-gallery-events>
+<app-get-in-touch></app-get-in-touch>

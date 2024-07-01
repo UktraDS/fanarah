@@ -1,0 +1,229 @@
+
+.admission {
+  .content {
+    padding: 50px 0;
+
+    .title {
+      color: rgb(46, 46, 46);
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 38px;
+      padding-top: 35px;
+      font-family: var(--Nunito);
+    }
+
+    .title-n {
+      color: black;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 38px;
+      padding-top: 35px;
+      text-align: end;
+      font-family: var(--Nunito);
+    }
+
+    /* form style  */
+    .form-section {
+      padding: 0 20px;
+      border-radius: 10px;
+    }
+
+    .student_date_of_birth_title {
+      background-color: transparent;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 26px;
+      color: rgb(46, 46, 46);
+      margin: 20px 0 5px 0;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin: auto;
+
+    }
+
+    .form-group .label {
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 26px;
+      color: rgb(46, 46, 46);
+      margin: 20px 0 0px 0;
+
+    }
+
+    .form-group .label .r-icon {
+      color: rgb(163, 10, 10);
+    }
+
+    .form-group .input-text {
+      background-color: transparent;
+      height: 35px;
+      border: 2px solid rgb(122, 122, 122);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      color: #161616;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+
+
+    }
+
+    .form-group .input-select {
+      background-color: transparent;
+      height: 40px;
+      border: 2px solid rgb(122, 122, 122);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      color: #161616;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+
+
+    }
+
+    .form-group .date {
+      background-color: transparent;
+      height: 85px;
+      border: 2px solid rgb(122, 122, 122);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 20px;
+      color: #161616;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+
+
+    }
+
+    .form-group .input-select>option {
+      color: #787878;
+    }
+
+    .btn-sub-parent {
+      margin-top: 30px;
+      background: rgba(108, 56, 51, 1);
+      padding: 7px;
+      border-radius: 33px;
+      width: 150px;
+
+
+
+    }
+
+    .btn-sub-parent>button {
+      background-color: white;
+      padding: 6px;
+      border-radius: 33px;
+      width: 136px;
+      color: black;
+      border: none;
+      font-weight: 600;
+      font-size: 17px;
+      position: relative;
+      .spinner-border{
+        top: 10%;
+        position: absolute;
+        left: 40%;
+      }   
+      &:hover {
+        color: white;
+        background: rgba(108, 56, 51, 1);
+      }
+    }
+
+    .modal-content {
+      max-width: 350px !important;
+    }
+
+    .modal-header {
+      border: none;
+
+    }
+
+    .modal-body .succes-img {
+      font-size: 70px;
+      color: #6C3833;
+      margin: 0 auto;
+    }
+
+    .modal-body {
+      padding: 15px;
+    }
+
+    .modal-body .content-box {
+      border-radius: 11.5px;
+    }
+
+    .modal-body .content-box h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: rgb(122, 122, 122);
+      margin-top: 10px;
+    }
+
+    .modal-body .content-box p {
+      font-size: 14px;
+      color: rgb(122, 122, 122);
+      margin-top: 15px;
+    }
+
+    .modal-body button {
+      background-color: #6C3833;
+      color: white;
+      padding: 10px 0;
+      border-radius: 11.5px;
+      margin-top: 1rem;
+      font-size: 20.1px;
+      width: 150px;
+      border: none;
+    }
+
+    .modal-header .btn-close {
+      background-color: #e5e5e5;
+      font-size: 9px;
+      color: #4F4F4F;
+      border-radius: 50%;
+      padding: 10px;
+      position: relative;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+  }
+}
+
+
+.modal-dialog-centered{
+  display: flex;
+    justify-content: center;
+
+}

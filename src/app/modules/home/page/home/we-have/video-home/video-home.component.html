@@ -1,0 +1,14 @@
+<div class="row m-0 d-flex justify-content-center p-3">
+    <div class="col-11" style="position: relative;">
+        <iframe *ngIf="!showVideo" (click)="hideSectionsVideo()" class="Video_style" [src]="url" autoplay controls loading></iframe>
+
+        <!-- <video (click)="hideSectionsVideo()" *ngIf="!showVideo" muted src="https://www.youtube.com/embed/HyPJqAaRxXE?si=gG01xj4C4hzl3j53" autoplay controls
+        type="video/mp4" class="Video_style"></video> -->
+
+        <img [src]="dataWehave?.video_poster" (click)="showSectionsVideo()" *ngIf="showVideo"  class="w-100 img" alt="">
+        <div class="d-flex justify-content-center play-container" (click)="showSectionsVideo()" *ngIf="showVideo">
+            <div class="circle"></div>
+            <i class="fa-solid fa-play m-auto button_play"></i>
+        </div>
+    </div>
+</div>

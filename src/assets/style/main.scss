@@ -1,0 +1,278 @@
+@import "maxins";
+@import "variables";
+@import "font";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html,
+body {
+  background-color: white !important;
+  min-height: 100%;
+  overflow: auto;
+
+}
+
+
+.toast-message {
+  font-size: 16px !important;
+}
+
+.toast-container {
+  position: fixed;
+}
+
+.bg_div {
+  .pattern {
+    .pattern1 {
+      // arabic
+      @include rtl(top, 45%);
+      @include rtl(left, 2%);
+      // english
+      @include ltr(top, 45%);
+      @include ltr(left, 58%);
+
+      @include mobile-only {
+        // arabic
+        @include rtl(top, 68%);
+        @include rtl(left, 0%);
+        // english
+        @include ltr(top, 68%);
+        @include ltr(left, 0%);
+      }
+    }
+
+    .pattern2 {
+      // arabic
+      @include rtl(top, 22%);
+      @include rtl(left, 25%);
+      // english
+      @include ltr(top, 22%);
+      @include ltr(left, 84%);
+
+      @include mobile-only {
+        // arabic
+        @include rtl(top, 60%);
+        @include rtl(left, 70%);
+        // english
+        @include ltr(top, 60%);
+        @include ltr(left, 70%);
+      }
+    }
+
+    .pattern3 {
+      // arabic
+      @include rtl(top, 78%);
+      @include rtl(left, 76%);
+      // english
+      @include ltr(top, 78%);
+      @include ltr(left, 12%);
+
+      @include tablet-and-up {
+        // arabic
+        @include rtl(top, 70%);
+        @include rtl(left, 70%);
+        // english
+        @include ltr(top, 76%);
+        @include ltr(left, 18%);
+      }
+
+      @include mobile-only {
+        // arabic
+        @include rtl(top, 45%);
+        @include rtl(left, 25%);
+        // english
+        @include ltr(top, 45%);
+        @include ltr(left, 55%);
+      }
+
+      @include mobile-only {}
+
+    }
+  }
+
+  .boy {
+    // arabic
+    @include rtl(transform, rotateY(180deg)) // english
+    // @include ltr(top, 45%);
+  }
+}
+
+.our_houses {
+  .order_1 {
+    // arabic
+    @include rtl(order, 2);
+
+    // english
+    @include ltr(order, 1);
+
+    .order_01 {
+      // arabic
+      @include rtl(justify-content, start !important);
+    }
+  }
+
+  .order_2 {
+    // arabic
+    @include rtl(order, 1);
+
+    // english
+    @include ltr(order, 2);
+
+    .order_02 {
+      // arabic
+      @include rtl(justify-content, end !important);
+    }
+  }
+
+  .order_3 {
+    // arabic
+    @include rtl(order, 4);
+
+    // english
+    @include ltr(order, 3);
+
+    .order_03 {
+      // arabic
+      @include rtl(justify-content, start !important);
+    }
+
+  }
+
+  .order_4 {
+    // arabic
+    @include rtl(order, 3);
+
+    // english
+    @include ltr(order, 4);
+
+    .order_04 {
+      // arabic
+      @include rtl(justify-content, end !important);
+    }
+  }
+}
+
+.happy_clints {
+  .icon1 {
+    // arabic
+    @include rtl(left, -98.8%);
+
+    // english
+    @include ltr(left, -1.8%);
+
+    @include mobile-only {
+      // arabic
+      @include rtl(left, -95.8%);
+      // english
+      @include ltr(left, -3.9%);
+    }
+  }
+
+  .icon2 {
+    // arabic
+    @include rtl(left, 4.8%);
+
+    // english
+    @include ltr(left, 95.8%);
+
+    @include mobile-only {
+      // arabic
+      @include rtl(left, 9.8%);
+      // english
+      @include ltr(left, 88.9%);
+    }
+  }
+
+}
+
+.gallery_events {
+  .swiper_slide {
+    width: 360px !important;
+
+    @include tablet-and-up {
+      width: 351px !important;
+    }
+
+    @include mobile-only {
+      width: 100% !important;
+    }
+  }
+}
+
+.events_gallery {
+  .button_div {
+    // arabic
+    @include rtl(left, 30px);
+
+    // english
+    @include ltr(right, 30px);
+  }
+}
+
+.schools_details {
+  .crad_details {
+    .li {
+      li {
+        // arabic
+        @include rtl(margin-right, 40px);
+
+        // english
+        @include ltr(margin-left, 40px);
+      }
+    }
+  }
+}
+
+.admission {
+
+  .form-select {
+    @include rtl(background-position, left 3px center !important);
+  }
+
+  .is-invalid {
+    @include rtl(background-position, left 3px center !important);
+  }
+
+
+  // .table{
+  //   overflow-x: auto;
+  // }
+
+  .form-check-label {
+    margin-top: 0 !important;
+  }
+}
+
+.contactUs {
+  .form-group_ {
+    .form-select {
+      // arabic
+      @include rtl(background-size, 170% 12px !important);
+
+      // english
+      @include ltr(background-size, 10% 12px !important);
+    }
+  }
+}
+
+.modal_style {
+    form {
+      .form-group_ {
+        .form-select {
+          // arabic
+          @include rtl(background-size, 170% 12px !important);
+
+          // english
+          @include ltr(background-size, 10% 12px !important);
+        }
+      }
+    }
+}

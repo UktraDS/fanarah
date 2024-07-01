@@ -1,0 +1,292 @@
+<app-sub-header></app-sub-header>
+
+<div class="admission">
+  <div class="content">
+
+    <div class="container">
+      <div class="text">
+        <p class="section-sup-title text-center">
+          {{ "schedule.name" |translate  | uppercase }}</p>
+        <h1 class="section-main-title text-center">
+          {{ "schedule.desc"|translate  | titlecase }}</h1>
+      </div>
+      <hr>
+    </div>
+
+    <!-- form  -->
+    <section class="addmation-form">
+      <form action="" style="margin-bottom: 100px;" [formGroup]="formGroup">
+        <div class="container ">
+          <div class="row form-section">
+            <h2 class="student_date_of_birth_title">
+              <i class="fa-solid fa-qrcode"></i> {{ "schedule.parentDetails" |translate }}
+            </h2>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="label"
+                  for="parent_first_name">{{ "schedule.parentFirstName" |translate | titlecase }}
+                  <span class="r-icon">*</span></label>
+                <input class="input-text" id="parent_first_name" name="parent_first_name" type="text" placeholder=""
+                  formControlName="parent_first_name">
+              </div>
+              <div *ngIf="formGroup.get('parent_first_name')?.invalid && formGroup.get('parent_first_name')?.touched"
+                class="text-danger form-group">
+                {{ 'schedule.valid_FName'| translate }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="label"
+                  for="parent_last_name">{{ "schedule.parentLastName" |translate | titlecase }}
+                  <span class="r-icon">*</span></label>
+                <input class="input-text" id="parent_last_name" name="parent_last_name" type="text" placeholder=""
+                  formControlName="parent_last_name">
+              </div>
+              <div *ngIf="formGroup.get('parent_last_name')?.invalid && formGroup.get('parent_last_name')?.touched"
+                class="text-danger form-group">
+                {{ 'schedule.valid_LName'| translate }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="label"
+                  for="phone">{{ "schedule.phone" |translate | titlecase }} <span
+                    class="r-icon">*</span></label>
+                <input class="input-text" id="phone" name="phone" type="text" placeholder="" formControlName="phone"
+                  maxlength="11">
+              </div>
+              <div
+                *ngIf="formGroup.get('phone')?.invalid && (formGroup.get('phone')?.hasError('pattern') || formGroup.get('phone')?.touched)"
+                class="text-danger form-group">
+                {{ 'schedule.valid_phone'| translate }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="label"
+                  for="email">{{ "schedule.email" |translate | titlecase }} <span
+                    class="r-icon">*</span></label>
+                <input class="input-text" id="email" name="email" type="text" placeholder="" formControlName="email">
+              </div>
+              <div
+                *ngIf="formGroup.get('email')?.invalid  &&  ( formGroup.get('email')?.touched || formGroup.get('email')?.hasError('emailPattern') )"
+                class="text-danger form-group">
+                {{ 'schedule.valid_email'| translate }}
+              </div>
+            </div>
+            <h2 class="student_date_of_birth_title">
+              <i class="fa-solid fa-qrcode"></i> {{ "schedule.studentDetails" |translate }}
+            </h2>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="label"
+                  for="student_first_name">{{ "schedule.studentFirstName" |translate | titlecase }}
+                  <span class="r-icon">*</span></label>
+                <input class="input-text" id="student_first_name" name="student_first_name" type="text" placeholder=""
+                  formControlName="student_first_name">
+              </div>
+              <div *ngIf="formGroup.get('student_first_name')?.invalid && formGroup.get('student_first_name')?.touched"
+                class="text-danger form-group">
+                {{ 'schedule.valid_SFName'| translate }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="label"
+                  for="student_last_name">{{ "schedule.studentLastName" |translate | titlecase }}
+                  <span class="r-icon">*</span></label>
+                <input class="input-text" id="student_last_name" name="student_last_name" type="text" placeholder=""
+                  formControlName="student_last_name">
+              </div>
+              <div *ngIf="formGroup.get('student_last_name')?.invalid && formGroup.get('student_last_name')?.touched"
+                class="text-danger form-group">
+                {{ 'schedule.valid_SLName'| translate }}
+              </div>
+            </div>
+            <h2 class="student_date_of_birth_title">
+              <i class="fa-regular fa-calendar-days"></i> {{ "schedule.studentDate" |translate }}
+            </h2>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="date" type="date" data-date="" data-date-format="DD MMMM YYYY" placeholder=""
+                  formControlName="birth_date" [max]="today">
+              </div>
+              <div *ngIf="formGroup.get('birth_date')?.invalid && formGroup.get('birth_date')?.touched"
+                class="text-danger form-group">
+                {{ 'schedule.valid_birth_date'| translate }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="label" for="gander">{{ "schedule.gender" |translate }} <span
+                    class="r-icon">*</span></label>
+                <select name="gander" id="gander" class="form-select form-select-lg input-select"
+                  formControlName="gender" (change)="checkType()">
+                  <option disabled [value]="'key'">{{ '---' }}</option>
+                  <option [value]="'schedule.male'|translate">{{ 'schedule.male'|translate }}
+                  </option>
+                  <option [value]="'schedule.female'|translate">{{ 'schedule.female'|translate }}
+                  </option>
+                </select>
+              </div>
+              <div *ngIf="formGroup.get('gender')?.invalid && formGroup.get('gender')?.touched"
+                class="text-danger  form-group">
+                {{ 'schedule.valid_gender'| translate }}
+              </div>
+              <div *ngIf="hideGender" class="text-danger  form-group">
+                {{ 'schedule.valid_gender'| translate }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="label" for="siblings">{{ "schedule.siblings" |translate }} <span
+                    class="r-icon">*</span></label>
+                <select name="siblings" id="siblings" class="form-select form-select-lg input-select"
+                  formControlName="siblings" (change)="checkType()">
+                  <option disabled [value]="'key'">{{ '---' }}</option>
+                  <option [value]="'schedule.yes'|translate">{{ 'schedule.yes'|translate }}
+                  </option>
+                  <option [value]="'schedule.no'|translate">{{ 'schedule.no'|translate }}
+                  </option>
+                </select>
+              </div>
+              <div *ngIf="formGroup.get('siblings')?.invalid && formGroup.get('siblings')?.touched"
+                class="text-danger  form-group">
+                {{ 'schedule.valid_siblings'| translate }}
+              </div>
+              <div *ngIf="hideSiblings" class="text-danger  form-group">
+                {{ 'schedule.valid_siblings'| translate }}
+              </div>
+            </div>
+            <h2 class="student_date_of_birth_title">
+              <i class="fa-solid fa-school"></i> {{ "schedule.schoolDetails" |translate }}
+            </h2>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="label"
+                  for="grade_applying_for">{{ "schedule.grade" |translate  | titlecase }}
+                  <span class="r-icon">*</span></label>
+                <select name="grade_applying_for" id="grade_applying_for"
+                  class="form-select form-select-lg input-select" formControlName="grade_applying_for"
+                  (change)="checkType()">
+                  <option disabled [value]="'key'">{{ '---' }}</option>
+                  <option value="Pre-k">Pre-k</option>
+                  <option value="KG1">KG1</option>
+                  <option value="KG2">KG2</option>
+                  <option value="Pr1">Pr1</option>
+                  <option value="Pr2">Pr2</option>
+                  <option value="Pr3">Pr3</option>
+                  <option value="Pr4">Pr4</option>
+                  <option value="Pr5">Pr5</option>
+                  <option value="Pr6">Pr6</option>
+                  <option value="Prep1">Prep1</option>
+                  <option value="Prep2">Prep2</option>
+                  <option value="Prep3">Prep3</option>
+                  <option value="Sec1">Sec1</option>
+                </select>
+              </div>
+              <div *ngIf="formGroup.get('grade_applying_for')?.invalid && formGroup.get('grade_applying_for')?.touched"
+                class="text-danger  form-group">
+                {{ 'schedule.valid_grade_applying_for'| translate }}
+              </div>
+              <div *ngIf="hideGradeApply" class="text-danger  form-group">
+                {{ 'schedule.valid_grade_applying_for'| translate }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="label"
+                  for="transfers_grade">{{ "schedule.forTransfers" |translate  | titlecase }}
+                </label>
+                <select name="transfers_grade" id="transfers_grade"
+                  class="form-select form-select-lg input-select" formControlName="transfers_grade"
+                  (change)="checkType()">
+                  <option disabled [value]="'key'">{{ '---' }}</option>
+                  <option value="Pre-k">Pre-k</option>
+                  <option value="KG1">KG1</option>
+                  <option value="KG2">KG2</option>
+                  <option value="Pr1">Pr1</option>
+                  <option value="Pr2">Pr2</option>
+                  <option value="Pr3">Pr3</option>
+                  <option value="Pr4">Pr4</option>
+                  <option value="Pr5">Pr5</option>
+                  <option value="Pr6">Pr6</option>
+                  <option value="Prep1">Prep1</option>
+                  <option value="Prep2">Prep2</option>
+                  <option value="Prep3">Prep3</option>
+                  <option value="Sec1">Sec1</option>
+                </select>
+              </div>
+              <div *ngIf="formGroup.get('transfers_grade')?.invalid && formGroup.get('transfers_grade')?.touched"
+                class="text-danger  form-group">
+                {{ 'schedule.valid_transfers_grade'| translate }}
+              </div>
+              <div *ngIf="hideGradeApply" class="text-danger  form-group">
+                {{ 'schedule.valid_transfers_grade'| translate }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="label"
+                  for="Previous_School_Name">{{ "schedule.previous" |translate  | titlecase }}
+                </label>
+                <input class="input-text" id="Previous_School_Name" name="Previous_School_Name" type="text"
+                  placeholder="" formControlName="previous_school_name">
+              </div>
+              <div
+                *ngIf="formGroup.get('previous_school_name')?.invalid && formGroup.get('previous_school_name')?.touched"
+                class="text-danger form-group">
+                {{ 'schedule.valid_previous_school_name'| translate }}
+              </div>
+            </div>
+            <div class="col-md-12 text-center mt-5">
+              <div class="alert alert-danger" role="alert"
+                *ngIf="formGroup.invalid && formGroup.touched && errorMess != ''" class="text-danger">
+                {{ errorMess |translate }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+          <div class="btn-sub-parent" >
+            <button type="submit" (click)="submit()"  >
+              <div class="spinner-border" role="status" *ngIf="isloading">
+              </div>
+              {{ "schedule.Submit" |translate }}
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade  " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  #modelApply>
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <div class="succes-img">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="content-box">
+              <h3>
+                {{ "schedule.success" |translate  | titlecase }}
+              </h3>
+              <p>{{ "schedule.congratulations" |translate  | titlecase }}
+              </p>
+            </div>
+            <button data-bs-dismiss="modal"> {{ "schedule.done" |translate  | titlecase }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

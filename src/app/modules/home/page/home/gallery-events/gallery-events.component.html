@@ -1,0 +1,58 @@
+<img src="assets/image/home/gallery/Union.svg" class="image" alt="">
+<div class="row m-0 d-flex justify-content-center gallery_events">
+    <div class="col-11 row m-0  p-1 p-sm-3 m-auto d-flex justify-content-center">
+        <p class="title">
+            {{data?.heading}}
+        </p>  
+    </div>
+    <!-- <main class="main">
+      <div class="containerr">
+        <div class="swiper-container">
+          <div class="swiper-wrapper mb-5">
+            <div class="swiper-slide">
+              <div class="card-image">
+                <img src="assets/image/home/gallery/img.jpg" class="size_image_slider" alt="">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card-image">
+                <img src="assets/image/home/gallery/img2.jpg" class="size_image_slider" alt="">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card-image">
+                <img src="assets/image/home/gallery/img3.jpg" class="size_image_slider" alt="">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card-image ">
+                <img src="assets/image/home/gallery/img4.jpg" class="size_image_slider" alt="">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card-image">
+                <img src="assets/image/home/gallery/img5.jpg" class="size_image_slider" alt="">
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card-image">
+                <img src="assets/image/home/gallery/img3.jpg" class="size_image_slider" alt="">
+              </div>
+            </div>
+          </div>
+              <div class="swiper-button-next">
+            <i class="fas fa-chevron-circle-right arrow-icon"></i>
+          </div>
+          <div class="swiper-button-prev">
+            <i class="fas fa-chevron-circle-left arrow-icon"></i>
+          </div>
+        </div>
+      </div>
+    </main> -->
+    <div class="keen-slider" #sliderRef>
+      <div [class]="'keen-slider__slide  number-slide'+(i+1)" *ngFor="let item of dataimage;let i =index">
+        <img [src]="item?.image" class="size_image_slider" alt="">
+      </div>
+    </div>
+</div>
+<img src="assets/image/home/gallery/Union2.svg" class="image2" alt="">
