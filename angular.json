@@ -30,8 +30,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
