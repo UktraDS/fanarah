@@ -15,7 +15,7 @@
   border: none;
   &::after {
     content: "";
-    width: 1.2px;
+    width: 2.4px;
     height: 35px;
     background-color: rgba(0, 0, 0, 0.09);
   }
@@ -36,7 +36,7 @@ select{
   border: none;
   background-color: rgba(251, 251, 251, 1);
   &::after {
-
+margin-right: 0;
     margin-left: 10px;
   color: rgba(44, 62, 80, 0.53);
 }
@@ -63,13 +63,25 @@ border: 2px solid white;
   background-color: rgba(117, 72, 68, 1);
 width: 100%;
 }
-::ng-deep html[dir="rtl"] .dropdown-toggle{
+::ng-deep html[dir="rtl"]{
+ .input-group-text
+ {
 
   &::after {
-    margin-right: 10px;
-    margin-left: 0;
-  color: rgba(44, 62, 80, 0.53);
+    content: "";
+    width: 1.4px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.09);
+  }
 }
+  .dropdown-toggle{
+
+    &::after {
+      margin-right: 10px;
+      margin-left: 0;
+      color: rgba(44, 62, 80, 0.53);
+    }
 
 
+  }
 }
