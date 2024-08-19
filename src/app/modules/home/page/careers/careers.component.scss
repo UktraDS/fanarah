@@ -1,0 +1,89 @@
+.container-fluid{
+  @media (max-width:768px) {
+padding: 15px;
+padding-top: 40px;
+  }
+  padding: 50px;
+  h4{
+    color: rgba(25, 49, 75, 1);
+    font-weight: 600;
+    font-size: 32px;
+  }
+}
+.col-12{
+  margin-top: 2rem;
+}
+.card
+{
+  padding-bottom: 25px;
+  overflow: hidden;
+  font-family: var(--Plus_Jakarta);
+  .title_card{
+    color: rgba(25, 49, 75, 1);
+    font-size: 24px;
+    font-weight: 600;
+
+  }
+  .skills{
+display: flex;
+gap: 10px;
+    .skill{
+padding: 8px;border-radius: 12px;
+background: rgba(98, 160, 226, 0.22);
+color: rgba(25, 49, 75, 1);
+    }
+  }
+  ul {
+    li{
+
+      color: rgba(51, 63, 87, 0.82);
+     line-height:  20.16px;
+     margin-bottom: 10px;
+     @media (max-width: 12px) {
+
+     }
+    }
+  }
+
+  .apply{
+    padding: 8px 12px;
+    color: white;
+    border-radius: 8px;
+    background-color: rgba(117, 72, 68, 1);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  min-height: 326px;
+  width: 400px;
+  max-width: 100%;
+  padding: 20px;
+}
+::ng-deep html[dir="rtl"] {
+.card  ul {
+  padding-left: 0;
+  padding-right: 32px;
+    li{
+
+      color: rgba(51, 63, 87, 0.82);
+     line-height:  20.16px;
+     margin-bottom: 10px;
+     @media (max-width: 12px) {
+
+     }
+    }
+  }
+
+  .card .apply{
+    padding: 8px 12px;
+    color: white;
+    border-radius: 8px;
+    background-color: rgba(117, 72, 68, 1);
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: auto !important;
+  }
+
+}

@@ -1,0 +1,78 @@
+.container-fluid{
+  @media (max-width:768px) {
+padding: 15px;
+padding-top: 40px;
+  }
+  padding: 50px;
+  h4{
+  color: rgba(25, 49, 75, 1);
+  font-weight: 600;
+  font-size: 32px;
+}
+.breadcrumb{
+  font-size: 24px;
+  .breadcrumb-item{
+    &::after{
+      font-size: 24px;
+    }
+  }
+}
+.links{
+  font-size: 24px;
+  font-weight: 600;
+  span:not(.active){
+    color: rgba(121, 121, 121, 1);
+    &:after{
+      content: ">";
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    span{
+color: rgba(25, 49, 75, 1);
+
+    }
+}
+}
+.content
+{
+
+  font-family: var(--Plus_Jakarta);
+  .title_card{
+    color: rgba(25, 49, 75, 1);
+    font-size: 32px;
+    font-weight: 600;
+
+  }
+
+  ul {
+    li{
+      font-size: 20px;
+      color: rgba(51, 63, 87, 0.82);
+      line-height:  20.16px;
+      margin-bottom: 10px;
+      @media (max-width: 12px) {
+
+      }
+    }
+  }
+
+
+  padding: 20px;
+}
+
+}
+::ng-deep html[dir="rtl"] {
+  .content  ul {
+    padding-left: 0;
+    padding-right: 32px;
+      li{
+
+        color: rgba(51, 63, 87, 0.82);
+       line-height:  20.16px;
+       margin-bottom: 10px;
+       @media (max-width: 12px) {
+
+       }
+      }
+    }
+  }

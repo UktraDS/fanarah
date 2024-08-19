@@ -1,0 +1,75 @@
+.form-group{
+  margin-bottom: 32px;
+  input{
+    height: 56px;
+    background-color: rgba(251, 251, 251, 1);
+    border: none;
+  }
+  input::placeholder{
+    color: rgba(121, 121, 121, 1);
+    font-size: 16px;
+  }
+  background-color: rgba(251, 251, 251, 1);
+}
+.input-group-text{
+  border: none;
+  &::after {
+    content: "";
+    width: 1.2px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.09);
+  }
+  //border-left: 1px solid rgba(0, 0, 0, 0.9)
+}
+select{
+  height: 100%;
+}
+.dropdown-menu .active{
+
+  background-color: rgb(226, 225, 225);
+}
+.dropdown-toggle{
+  &:hover{
+    border: none;
+
+  }
+  border: none;
+  background-color: rgba(251, 251, 251, 1);
+  &::after {
+
+    margin-left: 10px;
+  color: rgba(44, 62, 80, 0.53);
+}
+
+
+}
+
+.upload{
+  outline: 2.3px dashed rgba(25, 49, 75, 1);
+border: 2px solid white;
+  background-color: rgba(246, 251, 255, 1);
+  height: 104px;
+  font-size: 20px;
+  cursor: pointer;;
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.apply{
+  padding: 8px 12px;
+  color: white;
+  border-radius: 8px;
+  background-color: rgba(117, 72, 68, 1);
+width: 100%;
+}
+::ng-deep html[dir="rtl"] .dropdown-toggle{
+
+  &::after {
+    margin-right: 10px;
+    margin-left: 0;
+  color: rgba(44, 62, 80, 0.53);
+}
+
+
+}

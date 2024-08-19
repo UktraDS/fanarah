@@ -6,12 +6,14 @@ import { ScreenLoadarComponent } from './components/screen-loadar/screen-loadar.
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { SubHeaderComponent } from './components/sub-header/sub-header.component';
+import { CareerHeaderComponent } from './components/career-header/career-header.component';
+import { CareerFormComponent } from './components/career-form/career-form.component';
 
 
 
 
 @NgModule({
-  declarations: [FooterComponent,HeaderComponent,ScreenLoadarComponent, SubHeaderComponent],
+  declarations: [FooterComponent,HeaderComponent,ScreenLoadarComponent, SubHeaderComponent, CareerHeaderComponent, CareerFormComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -20,6 +22,8 @@ import { SubHeaderComponent } from './components/sub-header/sub-header.component
   exports: [
     HeaderComponent,
     FooterComponent,
+    CareerHeaderComponent,
+    CareerFormComponent,
     ScreenLoadarComponent,
     SubHeaderComponent
   ],

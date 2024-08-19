@@ -25,10 +25,30 @@ import { GetInTouchComponent } from './page/home/get-in-touch/get-in-touch.compo
 import { DetailsSchoolsComponent } from './page/details-schools/details-schools.component';
 import { SliderSchoolComponent } from './page/details-schools/slider-school/slider-school.component';
 import { AdmissionOnlineComponent } from './page/admission-online/admission-online.component';
+import { CareersComponent } from './page/careers/careers.component';
+import { JobApplicationComponent } from './page/job-application/job-application.component';
 
 
 @NgModule({
-  declarations: [HomeComponent,ContactusComponent,AboutusComponent, SchoolsComponent, EventsGalleryComponent, ThreeCardComponent, WeHaveComponent, VideoHomeComponent, OurProgramComponent, DetailsServiceComponent, AboutUsComponent, YoungGenerationComponent, HeroDiscoverComponent, OurHousesComponent, OurProgramsComponent, HappyClientsComponent, GalleryEventsComponent, GetInTouchComponent, DetailsSchoolsComponent, SliderSchoolComponent, AdmissionOnlineComponent],
+  declarations: [HomeComponent,
+    ContactusComponent,
+
+    AboutusComponent,
+     SchoolsComponent,
+      EventsGalleryComponent,
+       ThreeCardComponent,
+       WeHaveComponent,
+       VideoHomeComponent,
+        OurProgramComponent,
+        DetailsServiceComponent,
+
+        AboutUsComponent,
+        YoungGenerationComponent,
+         HeroDiscoverComponent,
+         OurHousesComponent,
+         OurProgramsComponent,
+         HappyClientsComponent,
+          GalleryEventsComponent, GetInTouchComponent, DetailsSchoolsComponent, SliderSchoolComponent, AdmissionOnlineComponent, CareersComponent, JobApplicationComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
