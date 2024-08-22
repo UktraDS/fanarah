@@ -54,6 +54,7 @@
     "Submit": "Submit",
 
     "valid_FName":"Please enter your frist name.",
+    "valid_FullName":"Please enter your full name.",
     "valid_LName":"Please enter your last name.",
     "valid_email":"Please enter a valid email.",
     "valid_phone":"Please enter a valid phone number.",

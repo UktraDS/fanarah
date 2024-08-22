@@ -28,10 +28,38 @@ export class SharedService {
   }
 
 
-  // home page 
+  // home page
+  getFlags(param?: any): Observable<any> {
+    this.setIsLoading(true);
+    return this.http.get(`assets/flags.json`, { headers: this.headers }).pipe(tap(() => { this.setIsLoading(false); }));
+  }
   getHomeheader(param?: any): Observable<any> {
     this.setIsLoading(true);
     return this.http.get(`${this.url}home/header`, { headers: this.headers }).pipe(tap(() => { this.setIsLoading(false); }));
+  }
+  getCvheader(param?: any): Observable<any> {
+    this.setIsLoading(true);
+    return this.http.get(`${this.url}career/cv-header`, { headers: this.headers }).pipe(tap(() => { this.setIsLoading(false); }));
+  }
+  getCareerheader(param?: any): Observable<any> {
+    this.setIsLoading(true);
+    return this.http.get(`${this.url}career/career-header`, { headers: this.headers }).pipe(tap(() => { this.setIsLoading(false); }));
+  }
+  getPositionheader(param?: any): Observable<any> {
+    this.setIsLoading(true);
+    return this.http.get(`${this.url}career/position-header`, { headers: this.headers }).pipe(tap(() => { this.setIsLoading(false); }));
+  }
+  getCareerlist(param?: any): Observable<any> {
+    this.setIsLoading(true);
+    return this.http.get(`${this.url}career/career`, { headers: this.headers }).pipe(tap(() => { this.setIsLoading(false); }));
+  }
+  getJobDetail(id?: any): Observable<any> {
+    this.setIsLoading(true);
+    return this.http.get(`${this.url}career/job/${id}`, { headers: this.headers }).pipe(tap(() => { this.setIsLoading(false); }));
+  }
+  cvSend(body?: any): Observable<any> {
+    this.setIsLoading(true);
+    return this.http.post(`${this.url}career/cv`,body, { headers: this.headers }).pipe(tap(() => { this.setIsLoading(false); }));
   }
   getFeatureInfomation(param?: any): Observable<any> {
     this.setIsLoading(true);
@@ -127,7 +155,7 @@ export class SharedService {
     return this.http.post<any>(`${this.url}form/online-admission`, param, { headers: this.headers }).pipe(tap(() => { this.setIsLoading(false); }));
   }
 
-  // Global 
+  // Global
   getLinksSocialMedia(param?: any): Observable<any> {
     this.setIsLoading(true);
     return this.http.get(`${this.url}home/social-media`, { headers: this.headers }).pipe(tap(() => { this.setIsLoading(false); }));

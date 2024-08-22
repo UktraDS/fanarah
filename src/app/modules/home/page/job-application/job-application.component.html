@@ -3,40 +3,42 @@
 <div class="container-fluid">
 
   <div class="links mb-4">
-    <span class="main-link">{{"career.open_position"|translate}}</span>
-    <span class="active">{{"Primary School Teachers"}}</span>
+    <span class="main-link">{{position.heading}}</span>
+    <span class="active">{{data.title}}</span>
   </div>
-<div class="content">
 
-  <p class="title_card ">{{"career.requirements"|translate}}</p>
-  <ul>
 
-    <li>Bachelor’s degree in Education or a related field.</li>
-    <li>Teaching certification.</li>
-    <li>Experience in primary education is preferred.</li>
-  </ul>
-</div>
-<div class="content">
+    <div class="content" *ngIf="data.title_1|| data.description_1">
 
-  <p class="title_card ">{{"career.responsibilities"|translate}}</p>
-  <ul>
-    <li>Develop and implement engaging lesson plans for students.</li>
-    <li>Assess and track student progress.</li>
-    <li>Foster a positive and inclusive classroom environment.</li>
-  </ul>
-</div>
-<div class="content pb-0">
+      <p class="title_card " *ngIf="data.title_1">{{data.title_1}}</p>
+      <ul *ngIf="data.description_1">
 
-  <p class="title_card ">{{"career.benefits"|translate}}</p>
-  <ul>
-    <li>Competitive salary and benefits package.</li>
-    <li>Professional development opportunities.</li>
+        <li *ngFor="let desc of data.description_1.split('\n')">{{desc}}</li>
 
-  </ul>
-</div>
+      </ul>
+    </div>
+    <div class="content" *ngIf="data.title_2|| data.description_2">
+
+      <p class="title_card " *ngIf="data.title_2">{{data.title_2}}</p>
+      <ul *ngIf="data.description_2">
+
+        <li *ngFor="let desc of data.description_2.split('\n')">{{desc}}</li>
+
+      </ul>
+    </div>
+    <div class="content" *ngIf="data.title_3|| data.description_3">
+
+      <p class="title_card " *ngIf="data.title_3">{{data.title_3}}</p>
+      <ul *ngIf="data.description_3">
+
+        <li *ngFor="let desc of data.description_3.split('\n')">{{desc}}</li>
+
+      </ul>
+    </div>
+
 
 </div>
 <div class="container-fluid pt-0">
 
-  <app-career-form></app-career-form>
+  <app-career-form [id]="data.id" [data]="cv"></app-career-form>
 </div>

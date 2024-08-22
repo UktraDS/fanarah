@@ -8,6 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SubHeaderComponent } from './components/sub-header/sub-header.component';
 import { CareerHeaderComponent } from './components/career-header/career-header.component';
 import { CareerFormComponent } from './components/career-form/career-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,6 +18,7 @@ import { CareerFormComponent } from './components/career-form/career-form.compon
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
     TranslateModule
   ],
   exports: [

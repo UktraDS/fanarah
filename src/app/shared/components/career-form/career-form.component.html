@@ -1,36 +1,67 @@
 <div class="row mt-5" >
   <div class="col-12 col-md-6" >
-    <form action="" style="width: 90%;">
-      <div class="form-group">
-        <input type="text" placeholder="{{'career.full_name'| translate }}" class="form-control">
+    <form style="width: 90%;" (submit)="submit($event)" [formGroup]="formGroup">
+
+<ng-template ngIf="errors">
+
+
+  <ng-container  *ngFor="let field of errors">
+    <div *ngFor="let error of field" class="text-danger">
+      {{ error }}
+    </div>
+  </ng-container>
+</ng-template>
+
+
+        <div class="form-group">
+        <input   formControlName="name" type="text" placeholder="{{'career.full_name'| translate }}" class="form-control">
+        <div *ngIf="formGroup.get('name')?.invalid && formGroup.get('name')?.touched" class="text-danger">
+          {{ 'contact.valid_Name'| translate }}
+        </div>
       </div>
       <div class="form-group">
-        <input type="email" placeholder="{{'career.email'| translate }}" class="form-control">
+        <input  type="email" formControlName="email"  placeholder="{{'career.email'| translate }}" class="form-control">
+        <div
+        *ngIf="formGroup.get('email')?.invalid  &&  ( formGroup.get('email')?.touched || formGroup.get('email')?.hasError('emailPattern') )"
+        class="text-danger form-group">
+        {{ 'schedule.valid_email'| translate }}
+      </div>
+        <input  type="hidden" formControlName="code" value="{{code}}"   class="form-control">
       </div>
       <div class="form-group input-group">
         <span class="input-group-text p-0" id="basic-addon1" ><div class="dropdown">
-          <button class="btn dropdown-toggle" type="button"[innerHTML]="flag" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn dropdown-toggle" type="button"[innerHTML]="flag" style="font-size: 24px;" data-bs-toggle="dropdown" aria-expanded="false">
 
           </button>
-          <ul class="dropdown-menu " style="min-width: 2rem;">
-            <li><a value ="eg" (click)="changeFlag($event)" style="cursor: pointer;" class="dropdown-item active" ><img src="assets/image/career/egy.png" alt="" /></a></li>
+          <ul class="dropdown-menu " style="min-width: 2rem;max-height: 300px;overflow-y: scroll;">
+
+            <li *ngFor="let country of flags"><a [attr.value]="country.dial_code" [attr.flag]="country.flag" (click)="changeFlag($event)" style="cursor: pointer;font-size: 24px;" class="dropdown-item {{country.flag == flag?'active':''}}" >{{country.flag}} <span   style="font-size: 16px; color: black !important;">({{country.dial_code}})</span></a></li>
 
           </ul>
         </div></span>
-        <input type="text" class="form-control" placeholder="{{'career.phone'|translate}}" aria-label="Username" aria-describedby="basic-addon1">
+        <input  type="text" pattern="[0-9]+" formControlName="phone" class="form-control" placeholder="{{'career.phone'|translate}}" aria-label="Username" aria-describedby="basic-addon1">
+
       </div>
-<div class="upload" (click)="upload()">
+      <div
+        *ngIf="formGroup.get('phone')?.invalid && formGroup.get('phone')?.touched "
+        class="text-danger form-group">
+        {{ 'schedule.valid_phone'| translate }}
+      </div>
+      <div class="upload" (click)="upload()">
   <div class="data m-auto">
 
     <img src="assets/image/career/upload.svg" class="mx-3"  alt=""> {{(selected?'career.selected':'career.upload_your_cv')|translate}}
   </div>
-  <input type="file" (change)="changeFile()" hidden id="file">
+  <input type="file" accept="application/pdf" (change)="changeFile($event)" hidden id="file">
 </div>
-<div class="btn  apply">{{'career.submit'|translate}} </div>
+<button type="submit"  class="btn  apply" *ngIf="!isloading">{{'career.submit'|translate}} </button>
+<button type="submit"  class="btn  apply" *ngIf="isloading"><span class="spinner-border text-light" role="status">
+  <span class="visually-hidden">Loading...</span>
+</span> </button>
 
     </form>
   </div>
   <div class="col-12 col-md-6 mt-3 mt-sm-0">
-    <img src="assets/image/career/form-img.png" class="w-100" height="452px" alt="">
+    <img src="{{data?.image}}" class="w-100" height="452px ; border-radius 8px" alt="">
   </div>
 </div>
