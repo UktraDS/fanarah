@@ -13,7 +13,7 @@
       <li *ngFor="let point of job.main_points.split('\n')">{{point}}</li>
 
     </ul>
-    <div class="skills">
+    <div class="skills" *ngIf="job.skills">
 
       <span *ngFor="let skill of job.skills.split('-')" class="skill">{{skill}}</span>
 
