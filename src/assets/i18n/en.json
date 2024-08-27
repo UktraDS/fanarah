@@ -33,6 +33,7 @@
     "studentLastName": "student last name",
     "phone": "Phone",
     "email": "Email",
+    "file": "please select file and file size must be not more than 10MB",
     "studentDetails": "Student Details",
     "studentDate": "Student Date Of Birth",
     "day": "Day",

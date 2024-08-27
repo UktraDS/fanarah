@@ -59,7 +59,7 @@ export class SharedService {
   }
   cvSend(body?: any): Observable<any> {
     this.setIsLoading(true);
-    return this.http.post(`${this.url}career/cv`,body, { headers: this.headers }).pipe(tap(() => { this.setIsLoading(false); }));
+    return this.http.post(`${this.url}form/cv`,body, { headers: this.headers }).pipe(tap(() => { this.setIsLoading(false); }));
   }
   getFeatureInfomation(param?: any): Observable<any> {
     this.setIsLoading(true);

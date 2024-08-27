@@ -13,6 +13,7 @@ import { max } from 'rxjs';
 export class CareerFormComponent {
   phone:string=''
   errors:any
+  fileError:any=false
   flags:any;
   isloading:boolean = false;
   formGroup: FormGroup = this.initForm();
@@ -105,18 +106,26 @@ this.isloading = true;
 this.sharedService.cvSend(this.formData).subscribe({
   next:(msg)=>{
     this.toastrService.success(this.translateService.instant('apply_Sent'));
-
+this.fileError =false
     this.isloading = false;
+
     this.formGroup.reset();
+    this.formData.delete('file')
+    this.selected =false;
   }
   ,
   error:(err:any)=>{
-  
-    this.errors = Object.values(err.error.errors)
 
     this.isloading = false;
+    if( Object.keys(err.error.errors).includes('file')){
+      this.fileError = true
+    }
+    //this.errors = Object.values(err.error.errors)
+
   }
 })
+  }else{
+    this.formGroup.markAllAsTouched()
   }
 }
 }

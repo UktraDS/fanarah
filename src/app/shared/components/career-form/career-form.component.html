@@ -7,7 +7,7 @@
 
   <ng-container  *ngFor="let field of errors">
     <div *ngFor="let error of field" class="text-danger">
-      {{ error }}
+      {{ error.replaceAll(['phone','email','name','file'],['career.phone'|translate,'career.email'|translate,'career.full_name'|translate,'career.phone'|translate]) }}
     </div>
   </ng-container>
 </ng-template>
@@ -53,6 +53,10 @@
     <img src="assets/image/career/upload.svg" class="mx-3"  alt=""> {{(selected?'career.selected':'career.upload_your_cv')|translate}}
   </div>
   <input type="file" accept="application/pdf" (change)="changeFile($event)" hidden id="file">
+</div>
+<div *ngIf="fileError"
+class="text-danger form-group">
+{{ 'schedule.file'| translate }}
 </div>
 <button type="submit"  class="btn  apply" *ngIf="!isloading">{{'career.submit'|translate}} </button>
 <button type="submit"  class="btn  apply" *ngIf="isloading"><span class="spinner-border text-light" role="status">
