@@ -108,7 +108,7 @@ this.sharedService.cvSend(this.formData).subscribe({
     this.toastrService.success(this.translateService.instant('apply_Sent'));
 this.fileError =false
     this.isloading = false;
-
+window.scrollTo(0,0);
     this.formGroup.reset();
     this.formData.delete('file')
     this.selected =false;
