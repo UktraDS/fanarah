@@ -15,6 +15,7 @@ export class CareerFormComponent {
   errors:any
   fileError:any=false
   flags:any;
+  success:any;
   isloading:boolean = false;
   formGroup: FormGroup = this.initForm();
   @Input() data:any
@@ -100,15 +101,17 @@ convertFormGroupToFormData() {
 }
 submit(e:any) {
   e.preventDefault();
+  this.success =''
   if ( !this.isloading && !this.formGroup.invalid) {
 this.convertFormGroupToFormData();
 this.isloading = true;
 this.sharedService.cvSend(this.formData).subscribe({
   next:(msg)=>{
     this.toastrService.success(this.translateService.instant('apply_Sent'));
+    this.success=(this.translateService.instant('apply_Sent'));
 this.fileError =false
     this.isloading = false;
-window.scrollTo(0,0);
+
     this.formGroup.reset();
     this.formData.delete('file')
     this.selected =false;

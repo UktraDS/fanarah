@@ -1,7 +1,11 @@
 <div class="row mt-5" >
   <div class="col-12 col-md-6" >
     <form style="width: 90%;" (submit)="submit($event)" [formGroup]="formGroup">
-
+      <div
+      *ngIf="success "
+      class="alert alert-success form-group">
+      {{ success }}
+    </div>
 <ng-template ngIf="errors">
 
 
