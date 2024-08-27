@@ -36,7 +36,7 @@ code:any='+02';
       next: (flags:any) =>{
         this.flags= flags;
         this.flag = flags[0].flag
-
+this.code = flags[0].dial_code
         this.formGroup.patchValue( {'code':flags[0].dial_code});
       }
     })
@@ -91,6 +91,9 @@ convertFormGroupToFormData() {
 
 
     if (control?.value != null) {
+      if(this.formData.has(key)){
+        this.formData.delete(key);
+      }
         this.formData.set(key, control?.value);
 
       } else {
@@ -115,6 +118,13 @@ this.fileError =false
     this.formGroup.reset();
     this.formData.delete('file')
     this.selected =false;
+    this.formGroup.patchValue({
+      name: '',
+      code: this.code,
+      phone: '',
+      email: '',
+    career_id: this.id??'',
+    })
   }
   ,
   error:(err:any)=>{
