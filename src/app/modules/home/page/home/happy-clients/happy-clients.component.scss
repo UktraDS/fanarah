@@ -63,7 +63,12 @@
     position: relative;
     cursor: pointer;
   }
-
+  .comment-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 260px;
+  }
   .comment {
 
     padding: 25px;
@@ -144,13 +149,14 @@
   }
 
   .icon1 {
-    font-size: 34px;
+    font-size: 44px;
     background-color: white;
     color: gray;
     border-radius: 50%;
     border: 0px solid gray;
     position: relative;
-    top: 25%;
+
+    top: 35%;
     z-index: 1000;
     order: 2;
 
@@ -163,13 +169,13 @@
   }
 
   .icon2 {
-    font-size: 34px;
+    font-size: 44px;
     background-color: white;
     color: gray;
     border-radius: 50%;
     border: 0px solid gray;
     position: relative;
-    top: 25%;
+    top: 35%;
     z-index: 1000;
     order: 1;
 

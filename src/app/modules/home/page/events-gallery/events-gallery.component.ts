@@ -41,7 +41,7 @@ export class EventsGalleryComponent implements OnInit {
     });
   }
 
-  // Change active Model 
+  // Change active Model
   changeActiveModel(id: any) {
     this.activeModel = this.dataEvent.categories.filter((model: any) => model.id == id)[0];
 

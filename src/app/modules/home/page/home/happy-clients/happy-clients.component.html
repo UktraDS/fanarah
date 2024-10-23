@@ -1,24 +1,25 @@
 <div class="d-flex justify-content-center p-2 p-sm-5 pb-0 happy_clints">
     <div class="width_div">
-    
+
       <p class="title" >{{data?.heading}}</p>
       <p class="desc" >
         {{data?.description}}
       </p>
-    
+
       <i class="fa-regular fa-circle-left icon1" (click)="goToPrevSlide()"></i>
      <i class="fa-regular fa-circle-right icon2" (click)="goToNextSlide()"></i>
       <div class="keen-slider list-unstyled pe-0 ps-0" #sliderRef >
         <div *ngFor="let item of comments; let firstItem = first ;let i = index" class="keen-slider__slide">
           <div class="pt-2 pt-sm-5">
-            <div class="comment"  [ngStyle]="{ 'background-color': selectOption[i % selectOption.length].color, 'border': '1.5px solid ' + selectOption[i % selectOption.length].color }">
-              <p class="desc_comment">{{item?.comment}}</p>
+            <div class="comment" [class.comment-img]="item.comment_image"   [ngStyle]="{'min-height':'260px', 'background-color': selectOption[i % selectOption.length].color, 'border': '1.5px solid ' + selectOption[i % selectOption.length].color }">
+              <img [src]="item?.comment_image" *ngIf="item.comment_image" class=" mw-100 mh-100" alt="">
+              <p class="desc_comment" *ngIf="!item.comment_image">{{item?.comment}}</p>
             </div>
           </div>
-          <div class="row m-0 d-flex justify-content-center mt-4">
+          <div class="row m-0 d-flex justify-content-center mt-4" *ngIf="!item.comment_image">
             <div class="col-1 d-flex d-sm-flex"></div>
             <div class="col-3">
-              <img [src]="item?.image" class="img_comment" alt="">
+              <img [src]="item?.image" class="img_comment" height="75" width="75" alt="">
             </div>
             <div class="col-8 m-auto">
                   <div class="Name_clint">{{item?.client_name}}</div>
@@ -29,8 +30,8 @@
         </div>
 
       </div>
-    
-    
+
+
       <div class="row m-0 d-flex justify-content-center">
         <div class="col-6 d-flex justify-content-center mt-5">
           <p class="d-flex">
@@ -45,4 +46,3 @@
       </div>
     </div>
     </div>
-    

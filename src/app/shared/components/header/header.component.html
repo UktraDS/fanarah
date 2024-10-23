@@ -32,6 +32,12 @@
           <div class="button4" *ngIf="item?.title == 'Facebook'">
             <a [href]="item?.link"><i class="fa-brands fa-facebook"></i></a>
           </div>
+          <div class="button4" *ngIf="item?.title == 'Linkedin'">
+            <a [href]="item?.link"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+          <div class="button4" [style.background]="'#e10000'" *ngIf="item?.title == 'YouTube'">
+            <a [href]="item?.link"><i class="fa-brands fa-youtube"></i></a>
+          </div>
         </ng-container>
       </div>
     </li>

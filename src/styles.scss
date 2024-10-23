@@ -20,3 +20,9 @@
 
 
 @import '../node_modules/ngx-toastr/toastr.css';
+.events_gallery iframe , .events_gallery blockquote {
+  width: 100%;
+  
+  border-radius: 25px;
+  padding: 0.5rem;
+}
