@@ -164,25 +164,36 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label class="label"
+                  for="program_applying_for">{{ "schedule.program" |translate  | titlecase }}
+                  <span class="r-icon">*</span></label>
+                <select (change)="changeGrades($event)" name="program_applying_for" id="program_applying_for"
+                  class="form-select form-select-lg input-select" formControlName="program_applying_for"
+                  >
+                  <option disabled [value]="'key'">{{ '---' }}</option>
+
+                  <option value="national">National</option>
+                  <option value="FIPP">FIPP</option>
+                  <option value="American">American</option>
+
+                </select>
+              </div>
+              <div *ngIf="formGroup.get('program_applying_for')?.invalid && formGroup.get('program_applying_for')?.touched"
+                class="text-danger  form-group">
+                {{ 'schedule.valid_program_applying_for'| translate }}
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="label"
                   for="grade_applying_for">{{ "schedule.grade" |translate  | titlecase }}
                   <span class="r-icon">*</span></label>
                 <select name="grade_applying_for" id="grade_applying_for"
                   class="form-select form-select-lg input-select" formControlName="grade_applying_for"
                   (change)="checkType()">
                   <option disabled [value]="'key'">{{ '---' }}</option>
-                  <option value="Pre-k">Pre-k</option>
-                  <option value="KG1">KG1</option>
-                  <option value="KG2">KG2</option>
-                  <option value="Pr1">Pr1</option>
-                  <option value="Pr2">Pr2</option>
-                  <option value="Pr3">Pr3</option>
-                  <option value="Pr4">Pr4</option>
-                  <option value="Pr5">Pr5</option>
-                  <option value="Pr6">Pr6</option>
-                  <option value="Prep1">Prep1</option>
-                  <option value="Prep2">Prep2</option>
-                  <option value="Prep3">Prep3</option>
-                  <option value="Sec1">Sec1</option>
+                  <option *ngFor="let item of grade" value="{{item}}">{{item}}</option>
+
                 </select>
               </div>
               <div *ngIf="formGroup.get('grade_applying_for')?.invalid && formGroup.get('grade_applying_for')?.touched"
@@ -191,6 +202,21 @@
               </div>
               <div *ngIf="hideGradeApply" class="text-danger  form-group">
                 {{ 'schedule.valid_grade_applying_for'| translate }}
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="label"
+                  for="Previous_School_Name">{{ "schedule.previous" |translate  | titlecase }}
+                </label>
+                <input class="input-text" id="Previous_School_Name" name="Previous_School_Name" type="text"
+                  placeholder="" formControlName="previous_school_name">
+              </div>
+              <div
+                *ngIf="formGroup.get('previous_school_name')?.invalid && formGroup.get('previous_school_name')?.touched"
+                class="text-danger form-group">
+                {{ 'schedule.valid_previous_school_name'| translate }}
               </div>
             </div>
             <div class="col-md-6">
@@ -215,6 +241,7 @@
                   <option value="Prep2">Prep2</option>
                   <option value="Prep3">Prep3</option>
                   <option value="Sec1">Sec1</option>
+                  <option value="Sec2">Sec2</option>
                 </select>
               </div>
               <div *ngIf="formGroup.get('transfers_grade')?.invalid && formGroup.get('transfers_grade')?.touched"
@@ -223,20 +250,6 @@
               </div>
               <div *ngIf="hideGradeApply" class="text-danger  form-group">
                 {{ 'schedule.valid_transfers_grade'| translate }}
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label class="label"
-                  for="Previous_School_Name">{{ "schedule.previous" |translate  | titlecase }}
-                </label>
-                <input class="input-text" id="Previous_School_Name" name="Previous_School_Name" type="text"
-                  placeholder="" formControlName="previous_school_name">
-              </div>
-              <div
-                *ngIf="formGroup.get('previous_school_name')?.invalid && formGroup.get('previous_school_name')?.touched"
-                class="text-danger form-group">
-                {{ 'schedule.valid_previous_school_name'| translate }}
               </div>
             </div>
             <div class="col-md-12 text-center mt-5">

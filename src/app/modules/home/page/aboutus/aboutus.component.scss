@@ -94,7 +94,7 @@
       font-family: 'Poppins', sans-serif;
       @include mobile-only {
         width: 94%;
-    }
+      }
     }
 
     .icon {
@@ -129,6 +129,7 @@
     }
 
     .card .text {
+      overflow: auto;
       width: 80%;
       margin: 0 auto;
       font-size: 13px;
@@ -136,6 +137,8 @@
       margin-top: 20px;
       color: white;
       font-weight: 200;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;
       letter-spacing: 2px;
       opacity: 0;
       max-height: 0;
@@ -147,6 +150,10 @@
     }
 
     .card:hover .text {
+      &:-webkit-scrollbar {
+        display: none;
+      }
+
       transition: all 0.3s ease;
       opacity: 1;
       max-height: 40px;

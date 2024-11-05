@@ -18,7 +18,7 @@
     <p class="title_who mt-5">Our Service</p>
     <div class="service row m-0 d-flex justify-content-evenly">
       <div class="col-12 col-sm-3 p-1 p-sm-3 mt-3 mt-sm-0" *ngFor="let item of dataOurService">
-        <div class="card">
+        <div class="card" (mouseenter)="onTextMouseEnter($event)"  (mouseleave)="onTextMouseLeave($event)">
           <div class="icon">
             <!-- <i class="fa-solid fa-school"></i> -->
             <img [src]="item.icon" alt="" class="w-75">

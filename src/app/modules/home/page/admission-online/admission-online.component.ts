@@ -67,12 +67,42 @@ export class AdmissionOnlineComponent {
       gender: ['key', [Validators.required, this.notKeyValidator]],
       siblings: ['key', [Validators.required, this.notKeyValidator]],
 
+      program_applying_for: ['key', [Validators.required, this.notKeyValidator]],
       grade_applying_for: ['key', [Validators.required, this.notKeyValidator]],
       transfers_grade: ['key', [Validators.required, this.notKeyValidator]],
       previous_school_name: ['', [Validators.required]]
     });
   }
-
+grade:any = null
+grades:any ={
+  national:[
+    "Pre-k",
+"KG1",
+"KG2",
+"Pr1",
+"Pr2",
+"Pr3",
+"Pr4",
+"Pr5",
+"Pr6",
+"Prep1",
+"Prep2",
+"Prep3",
+"Sec1",
+"Sec2"],
+FIPP:[
+  "Prep1 FIPP",
+  "Prep2 FIPP",
+  "Prep3 FIPP",
+],
+American:[
+  'G10',
+  'G11',
+]
+}
+changeGrades(e:any){
+this.grade = this.grades[e.target.value]
+}
   emailPatternValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
       if (!control.value) {
@@ -145,18 +175,24 @@ export class AdmissionOnlineComponent {
     this.hideTransfersGrade = this.formGroup.value.transfers_grade === '---';
 
     // Update transfers_grade options based on grade_applying_for
+    console.log(this.formGroup.value.grade_applying_for);
+
     const availableTransfersOptions = this.getTransfersGradeOptions(this.formGroup.value.grade_applying_for);
     const transfersGradeSelect = document.getElementById('transfers_grade') as HTMLSelectElement;
-    transfersGradeSelect.innerHTML = '';
-    availableTransfersOptions.forEach(option => {
-      const optionElement = document.createElement('option');
-      optionElement.value = option;
-      optionElement.textContent = option;
-      transfersGradeSelect.appendChild(optionElement);
-    });
+    if(this.formGroup.value.program_applying_for =='national'){
+
+      transfersGradeSelect.innerHTML = '';
+      availableTransfersOptions.forEach(option => {
+        const optionElement = document.createElement('option');
+        optionElement.value = option;
+        optionElement.textContent = option;
+        transfersGradeSelect.appendChild(optionElement);
+      });
+    }
+
 
     // Disable transfers_grade select for 'Pre-k'
-    transfersGradeSelect.disabled = this.formGroup.value.grade_applying_for === 'Pre-k';
+    //transfersGradeSelect.disabled = this.formGroup.value.grade_applying_for === 'Pre-k';
 
     // Dispatch change event for transfers_grade select to trigger its update
     const event = new Event('change');
@@ -165,7 +201,7 @@ export class AdmissionOnlineComponent {
 
 
   getTransfersGradeOptions(selectedGrade: string): string[] {
-    const options: string[] = ['Pre-k','KG1', 'KG2', 'Pr1', 'Pr2', 'Pr3', 'Pr4', 'Pr5', 'Pr6', 'Prep1', 'Prep2', 'Prep3', 'Sec1'];
+    const options: string[] = ['Pre-k','KG1', 'KG2', 'Pr1', 'Pr2', 'Pr3', 'Pr4', 'Pr5', 'Pr6', 'Prep1', 'Prep2', 'Prep3', 'Sec1',"Sec2"];
     const index = options.indexOf(selectedGrade);
     if (index !== -1) {
       return options.slice(index + 1);
@@ -243,7 +279,7 @@ export class AdmissionOnlineComponent {
       modalElement.classList.add('show');
       modalElement.style.display = 'block';
       modalElement.style.backgroundColor = '#0000004d';
-    }    
+    }
   }
 
 }

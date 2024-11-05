@@ -47,6 +47,7 @@
     "no":"No",
     "schoolDetails": "School details",
     "grade": "Grade applying for",
+    "program": "Program applying for",
     "forTransfers": "For transferred students, please choose your current grade",
     "previous": "For transferred students, please write the name of your current school",
     "success": "Success",
