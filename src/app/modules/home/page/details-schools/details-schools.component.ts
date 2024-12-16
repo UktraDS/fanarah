@@ -13,7 +13,7 @@ export class DetailsSchoolsComponent {
 
   activeProductId: any;
   // filteredItems: any[] = [];
-  
+
   // itemsData = [
 
   //   {
@@ -76,15 +76,17 @@ export class DetailsSchoolsComponent {
   data?:any;
   dataLink?:any;
   points?:any[];
-  
+  points2?:any[];
+
   constructor(@Inject(DOCUMENT) private documents: any, private route: ActivatedRoute, private router: Router, private sharedService: SharedService){
     this.route.params.subscribe((params: any) => {
-      this.activeProductId = params['id'];      
+      this.activeProductId = params['id'];
 
       this.sharedService.getSchoolCampusDetails(this.activeProductId).pipe(takeUntil(this.unsubscribe)).subscribe({
         next: (data) => {
           this.dataSchool = data.data;
           this.points=this.dataSchool.points.split('@');
+          this.points2=this.dataSchool.points2.split('@');
         },
       });
     });
@@ -92,9 +94,9 @@ export class DetailsSchoolsComponent {
 
   ngOnInit(): void {
     // this.route.params.subscribe((params: any) => {
-    //   this.activeProductId = params['id'];       
+    //   this.activeProductId = params['id'];
     //   if (this.activeProductId !== undefined && this.activeProductId !== null) {
-    //     this.filteredItems = this.itemsData.filter(item => item.id === parseInt(this.activeProductId));        
+    //     this.filteredItems = this.itemsData.filter(item => item.id === parseInt(this.activeProductId));
     //   } else {
     //     this.filteredItems = [];
     //   }
@@ -108,7 +110,7 @@ export class DetailsSchoolsComponent {
       next: (data) => {
         this.dataLink = data.data;
         // console.log(this.dataLink);
-        
+
       },
     });
 

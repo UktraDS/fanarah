@@ -220,30 +220,7 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="form-group">
-                <label class="label"
-                  for="transfers_grade">{{ "schedule.forTransfers" |translate  | titlecase }}
-                </label>
-                <select name="transfers_grade" id="transfers_grade"
-                  class="form-select form-select-lg input-select" formControlName="transfers_grade"
-                  (change)="checkType()">
-                  <option disabled [value]="'key'">{{ '---' }}</option>
-                  <option value="Pre-k">Pre-k</option>
-                  <option value="KG1">KG1</option>
-                  <option value="KG2">KG2</option>
-                  <option value="Pr1">Pr1</option>
-                  <option value="Pr2">Pr2</option>
-                  <option value="Pr3">Pr3</option>
-                  <option value="Pr4">Pr4</option>
-                  <option value="Pr5">Pr5</option>
-                  <option value="Pr6">Pr6</option>
-                  <option value="Prep1">Prep1</option>
-                  <option value="Prep2">Prep2</option>
-                  <option value="Prep3">Prep3</option>
-                  <option value="Sec1">Sec1</option>
-                  <option value="Sec2">Sec2</option>
-                </select>
-              </div>
+        
               <div *ngIf="formGroup.get('transfers_grade')?.invalid && formGroup.get('transfers_grade')?.touched"
                 class="text-danger  form-group">
                 {{ 'schedule.valid_transfers_grade'| translate }}

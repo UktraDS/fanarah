@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
+import { count, Subject, takeUntil } from 'rxjs';
 import { SharedService } from 'src/app/shared/services/shared.service';
 
 // interface CardItem {
@@ -26,13 +26,16 @@ export class DetailsServiceComponent implements OnInit{
   unsubscribe: Subject<any> = new Subject();
   data?: any;
   animationExecuted: boolean = false;
-
+mainDatacount:any[] = [];
   constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {
     this.sharedService.getStatistics().pipe(takeUntil(this.unsubscribe)).subscribe({
       next: (data) => {
-        this.data = data.data;
+        this.mainDatacount = [...data.data]
+        this.data = [...data.data];
+        console.log(this.mainDatacount);
+
         // this.startCountAnimation();
 
       },
@@ -74,16 +77,30 @@ export class DetailsServiceComponent implements OnInit{
     for (let index = 0; index < this.data.length; index++) {
       const targetCount = parseInt(this.data[index].count);
       const intervalTime = 10;
+
       const increment = Math.ceil(targetCount / (4000 / intervalTime));
       let currentCount = 1;
+      let defaultValue = this.data[index].count
+      console.log(defaultValue);
+
       const interval = setInterval(() => {
         if (currentCount < targetCount) {
           currentCount += increment;
           if (currentCount > targetCount) {
             currentCount = targetCount;
           }
+          console.log(this.data[index]);
+
           this.data[index].count = currentCount.toString();
         } else {
+console.log(this.data[index]);
+console.log(this.mainDatacount[index]);
+
+
+  this.data[index].count = defaultValue ;
+
+
+
           clearInterval(interval);
         }
       }, intervalTime);
@@ -98,11 +115,11 @@ export class DetailsServiceComponent implements OnInit{
   // onScroll(): void {
   //   const sectionOffset = this.targetSection?.nativeElement.offsetTop;
   //   const windowHeight = window.innerHeight;
-  
+
   //   console.log("Section Offset:", sectionOffset);
   //   console.log("Window Height:", windowHeight);
   //   console.log("Data:", this.data);
-  
+
   //   if (window.pageYOffset > sectionOffset - windowHeight) {
   //     if (this.data) {
   //         this.startCountAnimation();

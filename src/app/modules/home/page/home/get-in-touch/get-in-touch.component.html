@@ -1,10 +1,19 @@
-<div class="row m-0 d-flex justify-content-center get_in" id="Contact">
+<div class="row m-0 d-flex justify-content-center get_in z-3" id="Contact">
   <div class="col-12 row m-0  p-1 p-sm-3 m-auto d-flex justify-content-center">
-    <p class="title">{{ 'contact.lets'|translate }}</p>
-    <div class="d-flex justify-content-center">
-      <div class="btn-sub-parent" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <button class="button_slider mb-3 mb-sm-0">{{ 'contact.contactus'|translate }}</button>
+    <div class="col-12 col-md-6 c-div ">
+
+      <p class="title">{{ 'contact.lets'|translate }}</p>
+      <div class="d-flex justify-content-center">
+        <div class="btn-sub-parent" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button class="button_slider mb-3 mb-sm-0">{{ 'contact.contactus'|translate }}</button>
+        </div>
       </div>
+    </div>
+    <div class="col-12 col-md-6 v-div">
+
+   <video [muted]="'muted'"  src="assets/image/contactUs/VID.mp4" autoplay  type="video/mp4"
+            class="Video_style"></video>
+
     </div>
   </div>
   <img src="assets/image/pattern/Frame4.png" class="pattern1" alt="">

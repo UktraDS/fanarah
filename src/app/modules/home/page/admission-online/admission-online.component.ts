@@ -69,7 +69,7 @@ export class AdmissionOnlineComponent {
 
       program_applying_for: ['key', [Validators.required, this.notKeyValidator]],
       grade_applying_for: ['key', [Validators.required, this.notKeyValidator]],
-      transfers_grade: ['key', [Validators.required, this.notKeyValidator]],
+   //   transfers_grade: ['key', [Validators.required, this.notKeyValidator]],
       previous_school_name: ['', [Validators.required]]
     });
   }
@@ -177,18 +177,18 @@ this.grade = this.grades[e.target.value]
     // Update transfers_grade options based on grade_applying_for
     console.log(this.formGroup.value.grade_applying_for);
 
-    const availableTransfersOptions = this.getTransfersGradeOptions(this.formGroup.value.grade_applying_for);
-    const transfersGradeSelect = document.getElementById('transfers_grade') as HTMLSelectElement;
-    if(this.formGroup.value.program_applying_for =='national'){
+    // const availableTransfersOptions = this.getTransfersGradeOptions(this.formGroup.value.grade_applying_for);
+    // const transfersGradeSelect = document.getElementById('transfers_grade') as HTMLSelectElement;
+    // if(this.formGroup.value.program_applying_for =='national'){
 
-      transfersGradeSelect.innerHTML = '';
-      availableTransfersOptions.forEach(option => {
-        const optionElement = document.createElement('option');
-        optionElement.value = option;
-        optionElement.textContent = option;
-        transfersGradeSelect.appendChild(optionElement);
-      });
-    }
+    //   transfersGradeSelect.innerHTML = '';
+    //   availableTransfersOptions.forEach(option => {
+    //     const optionElement = document.createElement('option');
+    //     optionElement.value = option;
+    //     optionElement.textContent = option;
+    //     transfersGradeSelect.appendChild(optionElement);
+    //   });
+  //  }
 
 
     // Disable transfers_grade select for 'Pre-k'
@@ -196,7 +196,7 @@ this.grade = this.grades[e.target.value]
 
     // Dispatch change event for transfers_grade select to trigger its update
     const event = new Event('change');
-    transfersGradeSelect.dispatchEvent(event);
+    //transfersGradeSelect.dispatchEvent(event);
 }
 
 

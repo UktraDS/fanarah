@@ -6,10 +6,14 @@
 <img src="assets/image/home/gallery/Union.svg" class="image" alt="">
 <div class="who_we">
   <p class="title_who pt-5">{{dataWhoWe?.heading}}</p>
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center desc-div">
     <div class="desc_who pb-5">
       {{dataWhoWe?.description}}
+
     </div>
+    <ul class="li">
+      <li *ngFor="let item of points">{{item}}</li>
+    </ul>
   </div>
 </div>
 <img src="assets/image/home/gallery/Union2.svg" class="image2" alt="">
@@ -18,13 +22,17 @@
     <p class="title_who mt-5">Our Service</p>
     <div class="service row m-0 d-flex justify-content-evenly">
       <div class="col-12 col-sm-3 p-1 p-sm-3 mt-3 mt-sm-0" *ngFor="let item of dataOurService">
-        <div class="card" (mouseenter)="onTextMouseEnter($event)"  (mouseleave)="onTextMouseLeave($event)">
+        <div class="card" (mouseenter)="onTextMouseEnter($event)" (touchstart)="onTextMouseEnter($event)" (touchend)="onTextMouseLeave($event)"  (mouseleave)="onTextMouseLeave($event)">
           <div class="icon">
             <!-- <i class="fa-solid fa-school"></i> -->
             <img [src]="item.icon" alt="" class="w-75">
           </div>
           <p class="title">{{item.title}}</p>
-          <p class="text">{{item.description}}</p>
+          <p class="text">
+            {{item.description}}
+
+          </p>
+
         </div>
       </div>
       <!-- <div class="col-12 col-sm-3 p-1 p-sm-3 mt-3 mt-sm-0">

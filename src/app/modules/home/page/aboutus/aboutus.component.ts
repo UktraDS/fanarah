@@ -13,16 +13,20 @@ export class AboutusComponent {
   dataWhoWe?: any;
   dataOurService?: any;
   firstTimeOut:any = null
+  points:any=[]
   secondTimeOut:any = null
-scrolled :number = 1 
-height :number = 0 
+  thirdTimeOut:any = null
+scrolled :number = 1
+height :number = 0
   constructor(@Inject(DOCUMENT) private documents: any, private sharedService: SharedService,private renderer: Renderer2) { }
 
   ngOnInit(): void {
     this.sharedService.getWhoWeAre().pipe(takeUntil(this.unsubscribe)).subscribe({
       next: (data) => {
         this.dataWhoWe = data.data;
-        // console.log(this.dataWhoWe);
+        this.points=this.dataWhoWe.points.split('@');
+
+        console.log(this.dataWhoWe);
       },
     });
     this.sharedService.getOurService().pipe(takeUntil(this.unsubscribe)).subscribe({
@@ -39,31 +43,39 @@ height :number = 0
     });
   }
   onTextMouseEnter2(e:any){
-    this.scrolled++;
     let text = e.target.querySelector('.text')
-   console.log( text.scrollTop );
+
   if(text.scrollTop < text.scrollHeight- text.clientHeight){
-  console.log("1");
 
   e.target.querySelector('.text').scrollBy(0,1)
   this.secondTimeOut= setTimeout(()=>this.onTextMouseEnter2(e),40)
 }
+else{
+this.thirdTimeOut = setTimeout(()=>{
+
+
+this.onTextMouseEnter(e)
+},2000)
+}
 
   }
   onTextMouseEnter(e:any){
-    this.height = e.target.clientHeight;
-    this.scrolled =0
+    clearTimeout(this.secondTimeOut)
+    clearTimeout(this.thirdTimeOut)
+    clearTimeout(this.firstTimeOut)
+
     e.target.querySelector('.text').scrollTo(0,0)
-this.firstTimeOut = setTimeout(() => {
-  this.onTextMouseEnter2(e)
-}, 700);
+    this.firstTimeOut = setTimeout(() => {
+      this.onTextMouseEnter2(e)
+    }, 400);
   }
   onTextMouseLeave(e:any){
+    clearTimeout(this.thirdTimeOut)
     clearTimeout(this.secondTimeOut)
     clearTimeout(this.firstTimeOut)
     console.log(   e.target.querySelector('.text'));
 
-    
+
 
   }
 }
