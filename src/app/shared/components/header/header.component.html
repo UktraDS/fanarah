@@ -1,29 +1,79 @@
 <div class="header_component d-none d-sm-block w-100">
   <ul class="d-flex justify-content-between mb-0 bod">
     <li class="d-flex justify-content-start col-3">
-      <img src="assets/image/header/icon.svg" routerLink="/home" alt="">
+      <img src="assets/image/header/icon.svg" routerLink="/home" alt="" />
     </li>
     <li class="m-auto col_center col-4">
       <ul class="d-flex justify-content-between">
-        <li class="page" routerLink="/home"  routerLinkActive="active-page">{{'header.home' | translate}}</li>
-        <li class="page" routerLink="/Schools" routerLinkActive="active-page">{{'header.schools' | translate}}</li>
-        <li class="page" routerLink="/Events-Gallery" routerLinkActive="active-page">{{'header.events' | translate}}</li>
-        <li class="page" routerLink="/About-us" routerLinkActive="active-page">{{'header.about' | translate}}</li>
+        <li class="page" routerLink="/home" routerLinkActive="active-page">
+          {{ "header.home" | translate }}
+        </li>
+        <!-- <li class="page" routerLink="/Schools" routerLinkActive="active-page">{{'header.schools' | translate}}</li> -->
+        <li class="page">
+          <button
+            class="btn dropdown-toggle p-0 border-0"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ "header.schools" | translate }}
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="/national-school">{{
+                "header.national_school" | translate
+              }}</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/american-school">{{
+                "header.american_school" | translate
+              }}</a>
+            </li>
+          </ul>
+        </li>
+        <li
+          class="page"
+          routerLink="/Events-Gallery"
+          routerLinkActive="active-page"
+        >
+          {{ "header.events" | translate }}
+        </li>
+        <li class="page" routerLink="/About-us" routerLinkActive="active-page">
+          {{ "header.about" | translate }}
+        </li>
         <!-- <li class="page" (click)="scrollToElement('Contact')" routerLinkActive="active-page">Contact Us</li> -->
-        <li class="page"  routerLink="/Contact-us" routerLinkActive="active-page">{{'header.contact' | translate}}</li>
-        <li class="page"  routerLink="/career" routerLinkActive="active-page">{{'header.career' | translate}}</li>
+        <li
+          class="page"
+          routerLink="/Contact-us"
+          routerLinkActive="active-page"
+        >
+          {{ "header.contact" | translate }}
+        </li>
+        <li class="page" routerLink="/career" routerLinkActive="active-page">
+          {{ "header.career" | translate }}
+        </li>
       </ul>
     </li>
     <li class="d-flex justify-content-end col-3">
       <div class="d-flex gap-2">
         <button class="btn button1" type="button">
-          <img (click)="switchLanguage('ar') " *ngIf="lang === 'en'" src="assets/image/Lang/Ellipse3.svg" alt=""
-            style="width: 35px;">
-          <img (click)="switchLanguage('en') " *ngIf="lang === 'ar'" src="assets/image/Lang/Ellipse5.svg" alt=""
-            style="width: 35px;">
+          <img
+            (click)="switchLanguage('ar')"
+            *ngIf="lang === 'en'"
+            src="assets/image/Lang/Ellipse3.svg"
+            alt=""
+            style="width: 35px"
+          />
+          <img
+            (click)="switchLanguage('en')"
+            *ngIf="lang === 'ar'"
+            src="assets/image/Lang/Ellipse5.svg"
+            alt=""
+            style="width: 35px"
+          />
         </button>
         <ng-container *ngFor="let item of dataLink">
-          <div class="button2"  *ngIf="item?.title == 'Instagram'">
+          <div class="button2" *ngIf="item?.title == 'Instagram'">
             <a [href]="item?.link"><i class="fa-brands fa-instagram"></i></a>
           </div>
           <div class="button3" *ngIf="item?.title == 'Twitter'">
@@ -35,7 +85,11 @@
           <div class="button4" *ngIf="item?.title == 'Linkedin'">
             <a [href]="item?.link"><i class="fa-brands fa-linkedin"></i></a>
           </div>
-          <div class="button4" [style.background]="'#e10000'" *ngIf="item?.title == 'YouTube'">
+          <div
+            class="button4"
+            [style.background]="'#e10000'"
+            *ngIf="item?.title == 'YouTube'"
+          >
             <a [href]="item?.link"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </ng-container>
@@ -46,31 +100,50 @@
 <div class="header_component_phone mt-2 d-block d-sm-none w-100">
   <ul class="d-flex justify-content-between mb-0 bod">
     <li class="d-flex justify-content-start col-3">
-      <img src="assets/image/header/icon.svg" routerLink="/home" alt="">
+      <img src="assets/image/header/icon.svg" routerLink="/home" alt="" />
     </li>
     <li class="d-flex justify-content-end col-3">
       <div class="d-flex gap-2">
         <button class="btn button1" type="button">
-          <img (click)="switchLanguage('ar') " *ngIf="lang === 'en'" src="assets/image/Lang/Ellipse3.svg" alt=""
-            style="width: 35px;">
-          <img (click)="switchLanguage('en') " *ngIf="lang === 'ar'" src="assets/image/Lang/Ellipse5.svg" alt=""
-            style="width: 35px;">
+          <img
+            (click)="switchLanguage('ar')"
+            *ngIf="lang === 'en'"
+            src="assets/image/Lang/Ellipse3.svg"
+            alt=""
+            style="width: 35px"
+          />
+          <img
+            (click)="switchLanguage('en')"
+            *ngIf="lang === 'ar'"
+            src="assets/image/Lang/Ellipse5.svg"
+            alt=""
+            style="width: 35px"
+          />
         </button>
-        <button class="btn btn_offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-          aria-controls="offcanvasExample">
-          <i class="fa-solid fa-bars "></i>
+        <button
+          class="btn btn_offcanvas"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample"
+        >
+          <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </li>
   </ul>
 
-  <div class="offcanvas offcanvas-start w-75  p-3" tabindex="-1" id="offcanvasExample"
-    aria-labelledby="offcanvasExampleLabel">
+  <div
+    class="offcanvas offcanvas-start w-75 p-3"
+    tabindex="-1"
+    id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel"
+  >
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasExampleLabel">
         <div class="d-flex gap-2">
           <ng-container *ngFor="let item of dataLink">
-            <div class="button2"  *ngIf="item?.title == 'Instagram'">
+            <div class="button2" *ngIf="item?.title == 'Instagram'">
               <a [href]="item?.link"><i class="fa-brands fa-instagram"></i></a>
             </div>
             <div class="button3" *ngIf="item?.title == 'Twitter'">
@@ -82,36 +155,105 @@
             <div class="button4" *ngIf="item?.title == 'Linkedin'">
               <a [href]="item?.link"><i class="fa-brands fa-linkedin"></i></a>
             </div>
-            <div class="button4" [style.background]="'#e10000'" *ngIf="item?.title == 'YouTube'">
+            <div
+              class="button4"
+              [style.background]="'#e10000'"
+              *ngIf="item?.title == 'YouTube'"
+            >
               <a [href]="item?.link"><i class="fa-brands fa-youtube"></i></a>
             </div>
-
           </ng-container>
           <button class="btn button1" type="button">
-            <img (click)="switchLanguage('ar') " *ngIf="lang === 'en'" src="assets/image/Lang/Ellipse3.svg" alt=""
-              style="width: 35px;">
-            <img (click)="switchLanguage('en') " *ngIf="lang === 'ar'" src="assets/image/Lang/Ellipse5.svg" alt=""
-              style="width: 35px;">
-          </button> 
+            <img
+              (click)="switchLanguage('ar')"
+              *ngIf="lang === 'en'"
+              src="assets/image/Lang/Ellipse3.svg"
+              alt=""
+              style="width: 35px"
+            />
+            <img
+              (click)="switchLanguage('en')"
+              *ngIf="lang === 'ar'"
+              src="assets/image/Lang/Ellipse5.svg"
+              alt=""
+              style="width: 35px"
+            />
+          </button>
         </div>
       </h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
     </div>
     <div class="offcanvas-body">
       <ul class="gap-4 mt-5">
-        <li class="page" routerLink="/home" routerLinkActive="active-page">{{'header.home' | translate}}</li>
-        <li class="page mt-3" routerLink="/Schools" routerLinkActive="active-page">{{'header.schools' | translate}}</li>
-        <!-- <li class="page mt-3" (click)="scrollToElement('Schools')" routerLinkActive="active-page">Schools</li> -->
-        <li class="page mt-3" routerLink="/Events-Gallery" routerLinkActive="active-page">{{'header.events' | translate}}</li>
-        <li class="page mt-3" routerLink="/About-us" routerLinkActive="active-page">{{'header.about' | translate}}</li>
-        <li class="page mt-3" routerLink="/Contact-us" routerLinkActive="active-page">{{'header.contact' | translate}}</li>
+        <li class="page" routerLink="/home" routerLinkActive="active-page">
+          {{ "header.home" | translate }}
+        </li>
+        <!-- <li
+          class="page mt-3"
+          routerLink="/Schools"
+          routerLinkActive="active-page"
+        >
+          {{ "header.schools" | translate }}
+        </li> -->
+        <li class="page mt-3">
+          <button
+            class="btn dropdown-toggle p-0 border-0"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ "header.schools" | translate }}
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="/national-school">{{
+                "header.national_school" | translate
+              }}</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/american-school">{{
+                "header.american_school" | translate
+              }}</a>
+            </li>
+          </ul>
+        </li>
+
+        <li
+          class="page mt-3"
+          routerLink="/Events-Gallery"
+          routerLinkActive="active-page"
+        >
+          {{ "header.events" | translate }}
+        </li>
+        <li
+          class="page mt-3"
+          routerLink="/About-us"
+          routerLinkActive="active-page"
+        >
+          {{ "header.about" | translate }}
+        </li>
+        <li
+          class="page mt-3"
+          routerLink="/Contact-us"
+          routerLinkActive="active-page"
+        >
+          {{ "header.contact" | translate }}
+        </li>
         <!-- <li class="page mt-3" (click)="scrollToElement('Contact')" routerLinkActive="active-page">Contact Us</li> -->
       </ul>
     </div>
   </div>
 </div>
 
-
-<div class="main" (click)="scrollToTop()" [ngClass]="{'show-scrollTop': windowScrolled}">
+<div
+  class="main"
+  (click)="scrollToTop()"
+  [ngClass]="{ 'show-scrollTop': windowScrolled }"
+>
   <p class="scroll"><i class="fa-solid fa-arrow-up"></i></p>
 </div>

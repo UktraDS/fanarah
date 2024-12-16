@@ -27,6 +27,7 @@ import { SliderSchoolComponent } from './page/details-schools/slider-school/slid
 import { AdmissionOnlineComponent } from './page/admission-online/admission-online.component';
 import { CareersComponent } from './page/careers/careers.component';
 import { JobApplicationComponent } from './page/job-application/job-application.component';
+import { AmericanSchoolComponent } from './page/american-school/american-school.component';
 
 
 @NgModule({
@@ -48,7 +49,7 @@ import { JobApplicationComponent } from './page/job-application/job-application.
          OurHousesComponent,
          OurProgramsComponent,
          HappyClientsComponent,
-          GalleryEventsComponent, GetInTouchComponent, DetailsSchoolsComponent, SliderSchoolComponent, AdmissionOnlineComponent, CareersComponent, JobApplicationComponent],
+          GalleryEventsComponent, GetInTouchComponent, DetailsSchoolsComponent, SliderSchoolComponent, AdmissionOnlineComponent, CareersComponent, JobApplicationComponent, AmericanSchoolComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

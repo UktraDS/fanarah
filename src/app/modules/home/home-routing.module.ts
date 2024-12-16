@@ -10,12 +10,14 @@ import { DetailsSchoolsComponent } from './page/details-schools/details-schools.
 import { AdmissionOnlineComponent } from './page/admission-online/admission-online.component';
 import { CareersComponent } from './page/careers/careers.component';
 import { JobApplicationComponent } from './page/job-application/job-application.component';
+import { AmericanSchoolComponent } from './page/american-school/american-school.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'Schools', component: SchoolsComponent },
-  { path: 'Schools-Details/:id', component: DetailsSchoolsComponent },
+  { path: 'national-school', component: SchoolsComponent },
+  { path: 'national-school-details/:id', component: DetailsSchoolsComponent },
+  { path: 'american-school', component: AmericanSchoolComponent },
   { path: 'Events-Gallery', component: EventsGalleryComponent },
   { path: 'About-us', component: AboutusComponent },
   { path: 'Contact-us', component: ContactusComponent },
@@ -24,15 +26,8 @@ const routes: Routes = [
   { path: 'career/job/:id', component: JobApplicationComponent },
 ];
 
-// @NgModule({
-//   declarations: [],
-//   imports: [
-//     CommonModule
-//   ]
-// })
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}
