@@ -1,27 +1,35 @@
 @import "../../../../assets/style/main.scss";
 
-.header{
-    background-color: #19314B;
+.header {
+  background-color: #19314b;
 
-
-    .icon{
-        font-size: 20px;
-        color: white;
-        cursor: pointer;
-    }
-    .span{
+  .icon {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+  }
+  .span {
     color: rgba(227, 227, 227, 0.877);
     font-size: 14px;
     padding-top: 3px;
     cursor: pointer;
+  }
 
+  .div_icon {
+    @include mobile-only {
+      justify-content: center !important;
+      gap: 2px;
     }
+  }
+}
 
-    .div_icon{
-        @include mobile-only{
-        justify-content: center !important;
-        gap: 2px;
-        }
-    }
-
+// Custom class is Created only to handle the <app-header/> in American school page
+.main-header {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  top: calc(100% + 10px);
+  @media (min-width: 767px) {
+    top: calc(100% + 40px);
+  }
 }

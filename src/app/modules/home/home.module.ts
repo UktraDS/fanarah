@@ -28,34 +28,52 @@ import { AdmissionOnlineComponent } from './page/admission-online/admission-onli
 import { CareersComponent } from './page/careers/careers.component';
 import { JobApplicationComponent } from './page/job-application/job-application.component';
 import { AmericanSchoolComponent } from './page/american-school/american-school.component';
-
+import { AboutSchoolComponent } from './page/american-school/about-school/about-school.component';
+import { TopBarComponent } from './page/american-school/top-bar/top-bar.component';
+import { AcademicProgramComponent } from './page/american-school/academic-program/academic-program.component';
+import { StudentActivitesComponent } from './page/american-school/student-activites/student-activites.component';
+import { TeachersComponent } from './page/american-school/teachers/teachers.component';
 
 @NgModule({
-  declarations: [HomeComponent,
+  declarations: [
+    HomeComponent,
     ContactusComponent,
 
     AboutusComponent,
-     SchoolsComponent,
-      EventsGalleryComponent,
-       ThreeCardComponent,
-       WeHaveComponent,
-       VideoHomeComponent,
-        OurProgramComponent,
-        DetailsServiceComponent,
+    SchoolsComponent,
+    EventsGalleryComponent,
+    ThreeCardComponent,
+    WeHaveComponent,
+    VideoHomeComponent,
+    OurProgramComponent,
+    DetailsServiceComponent,
 
-        AboutUsComponent,
-        YoungGenerationComponent,
-         HeroDiscoverComponent,
-         OurHousesComponent,
-         OurProgramsComponent,
-         HappyClientsComponent,
-          GalleryEventsComponent, GetInTouchComponent, DetailsSchoolsComponent, SliderSchoolComponent, AdmissionOnlineComponent, CareersComponent, JobApplicationComponent, AmericanSchoolComponent],
+    AboutUsComponent,
+    YoungGenerationComponent,
+    HeroDiscoverComponent,
+    OurHousesComponent,
+    OurProgramsComponent,
+    HappyClientsComponent,
+    GalleryEventsComponent,
+    GetInTouchComponent,
+    DetailsSchoolsComponent,
+    SliderSchoolComponent,
+    AdmissionOnlineComponent,
+    CareersComponent,
+    JobApplicationComponent,
+    AmericanSchoolComponent,
+    AboutSchoolComponent,
+    TopBarComponent,
+    AcademicProgramComponent,
+    StudentActivitesComponent,
+    TeachersComponent,
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     SharedModule,
     TranslateModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+  ],
 })
-export class HomeModule { }
+export class HomeModule {}

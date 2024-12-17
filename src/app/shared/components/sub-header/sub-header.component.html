@@ -1,8 +1,5 @@
-<div class="header">
-  <div
-    class="d-flex justify-content-center"
-    [ngStyle]="{ 'margin-bottom': optionalMargin ? optionalMargin : '0' }"
-  >
+<div class="header position-relative">
+  <div class="d-flex justify-content-center">
     <div class="row m-0 d-flex justify-content-between p-1 p-sm-3 col-11">
       <div class="col-12 col-sm-5 d-flex justify-content-start gap-3 div_icon">
         <div>
@@ -37,5 +34,8 @@
       </div>
     </div>
   </div>
-  <app-header class="d-flex justify-content-center pb-2"></app-header>
+  <app-header
+    class="d-flex justify-content-center pb-2"
+    [ngClass]="{ 'main-header': customClass }"
+  ></app-header>
 </div>

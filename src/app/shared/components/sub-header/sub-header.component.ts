@@ -12,7 +12,8 @@ export class SubHeaderComponent {
   unsubscribe: Subject<any> = new Subject();
   dataLink?: any;
   data?: any;
-  @Input() optionalMargin: string | undefined;
+  @Input() customClass: boolean = false;
+
   constructor(
     @Inject(DOCUMENT) private documents: any,
     private sharedService: SharedService

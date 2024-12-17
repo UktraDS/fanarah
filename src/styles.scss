@@ -2,7 +2,6 @@
 // @import "primeng/resources/themes/lara-light-blue/theme.css";
 // @import "primeng/resources/primeng.css";
 
-
 /* Importing Bootstrap SCSS file. */
 //@import "bootstrap/dist/css/bootstrap.min.css";
 // @import "./assets/styles/main.scss";
@@ -11,18 +10,42 @@
 // @import "../node_modules/primeng/resources/themes/lara-light-blue/theme.css";
 // @import "../node_modules/primeng/resources/primeng.css";
 
-@import '../src/assets/style/main.scss';
+@import "../src/assets/style/main.scss";
 
 /* Importing Bootstrap SCSS file. */
 //@import 'bootstrap/scss/bootstrap';
 
 /* Importing Bootstrap SCSS file. */
 
-
-@import '../node_modules/ngx-toastr/toastr.css';
-.events_gallery iframe , .events_gallery blockquote {
+@import "../node_modules/ngx-toastr/toastr.css";
+.events_gallery iframe,
+.events_gallery blockquote {
   width: 100%;
-  
+
   border-radius: 25px;
   padding: 0.5rem;
 }
+
+// Start general styles in Amrican School component
+.small-title {
+  text-transform: capitalize;
+  color: #4070a3;
+  margin-bottom: 12px;
+  font: {
+    size: 20px;
+    font-weight: 500;
+  }
+}
+.large-title {
+  color: #353535;
+  margin-bottom: 16px;
+  font: {
+    size: 20px;
+    font-weight: 500;
+  }
+  @media (min-width: 767px) {
+    margin-bottom: 32px;
+    font-size: 36px;
+  }
+}
+// End general styles in Amrican School component
