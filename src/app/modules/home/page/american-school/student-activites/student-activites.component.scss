@@ -1,0 +1,109 @@
+.activities-section {
+  margin-bottom: 60px;
+  gap: 35px 80px;
+  @media (min-width: 767px) {
+    margin-bottom: 95px;
+  }
+  .left-content,
+  .right-content {
+    @media (min-width: 1200px) {
+      width: calc((100% - 80px) / 2);
+    }
+  }
+  .left-content {
+    .small-title {
+      text-transform: capitalize;
+      color: #4070a3;
+      margin-bottom: 12px;
+      font: {
+        size: 20px;
+        font-weight: 500;
+      }
+    }
+    .large-title {
+      color: #353535;
+      margin-bottom: 16px;
+      font: {
+        size: 20px;
+        font-weight: 500;
+      }
+      @media (min-width: 767px) {
+        margin-bottom: 32px;
+        font-size: 36px;
+      }
+    }
+    p {
+      margin-bottom: 24px;
+      line-height: 19px;
+      color: #929292;
+      width: 90%;
+      @media (min-width: 767px) {
+        margin-bottom: 38px;
+        line-height: 29px;
+        font-size: 24px;
+      }
+    }
+    .img-container {
+      width: fit-content;
+      margin: 0 auto;
+    }
+  }
+  .right-content {
+    row-gap: 40px;
+    @media (min-width: 992px) {
+      row-gap: 50px;
+    }
+    .activity {
+      column-gap: 12px;
+      .desc {
+        margin-top: 6px;
+        @media (min-width: 767px) {
+          margin-top: 12px;
+        }
+        h4 {
+          margin-bottom: 6px;
+          color: #19314b;
+          font: {
+            size: 14.5px;
+            weight: 600;
+          }
+          @media (min-width: 767px) {
+            margin-bottom: 15px;
+            font-size: 24px;
+          }
+        }
+        p {
+          color: #000000b0;
+          font-size: 14.5px;
+          line-height: 16px;
+          @media (min-width: 767px) {
+            font-size: 24px;
+            line-height: 26px;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        background-color: #eef4fb;
+        padding: 10px;
+        border-radius: 16px;
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        -ms-border-radius: 16px;
+        -o-border-radius: 16px;
+        @media (min-width: 767px) {
+          padding: 20px;
+        }
+        @media (min-width: 1200px) {
+          position: relative;
+          inset-inline-start: 15px;
+        }
+        .desc {
+          h4 {
+            color: #970c0c;
+          }
+        }
+      }
+    }
+  }
+}
