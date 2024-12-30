@@ -1,60 +1,49 @@
 <section class="about-section position-relative">
-  <article
-    class="main-content row justify-content-between align-items-center row-gap-4"
-  >
+  <article class="main-content row justify-content-between align-items-center row-gap-4">
     <div class="col-lg-5">
       <h2 class="small-title">about</h2>
       <h3 class="large-title">
-        Welcome to the American Department at Fanarah School!
+        <!-- Welcome to the American Department at Fanarah School! -->
+        {{data?.title}}
       </h3>
       <p class="mb-0 mb-md-4">
-        We are excited to announce the launch of this new and dynamic
+        <!-- We are excited to announce the launch of this new and dynamic
         department, designed to provide students with a comprehensive,
-        high-standard American education.
+        high-standard American education. -->
+        {{data?.description}}
       </p>
-      <a href="" class="d-flex align-items-center gap-2"
-        >Contact Us to Learn More
-        <span class="d-block rounded-circle border border-danger">&gt;</span></a
-      >
+      <a href="" class="d-flex align-items-center gap-2">Contact Us to Learn More
+        <span class="d-block rounded-circle border border-danger">&gt;</span></a>
     </div>
 
     <div class="col-lg-5">
-      <video class="w-100 h-100 rounded-4" controls>
-        <source
+      <video class="w-100 h-100 rounded-4" controls autoplay>
+        <!-- <source
           src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
           type="video/mp4"
-        />
+        /> -->
+        <source [src]="data?.video" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
   </article>
 
-  <article
-    class="summary d-flex flex-column flex-xl-row justify-content-between row-gap-4"
-  >
-    <div
-      class="d-flex column-gap-2 column-gap-md-3 rounded-3 p-3 p-md-4 align-self-start"
-    >
-      <img
-        src="../../../../../../assets/image/american-school/about-icon.svg"
-        alt=""
-      />
+  <article class="summary d-flex flex-column flex-xl-row justify-content-between row-gap-4">
+    <div class="d-flex column-gap-2 column-gap-md-3 rounded-3 p-3 p-md-4 align-self-start">
+      <img src="../../../../../../assets/image/american-school/about-icon.svg" alt="" />
       <p class="m-0">
-        Our aim is to foster an environment where academic excellence and
-        innovation thrive.
+        <!-- Our aim is to foster an environment where academic excellence and
+        innovation thrive. -->
+        {{data?.aim1}}
       </p>
     </div>
 
-    <div
-      class="d-flex column-gap-2 column-gap-md-3 rounded-3 p-3 p-md-4 mt-xl-4"
-    >
-      <img
-        src="../../../../../../assets/image/american-school/about-icon.svg"
-        alt=""
-      />
+    <div class="d-flex column-gap-2 column-gap-md-3 rounded-3 p-3 p-md-4 mt-xl-4">
+      <img src="../../../../../../assets/image/american-school/about-icon.svg" alt="" />
       <p class="m-0">
-        Our aim is to foster an environment where academic excellence and
-        innovation thrive.
+        <!-- Our aim is to foster an environment where academic excellence and
+        innovation thrive. -->
+        {{data?.aim2}}
       </p>
     </div>
   </article>
