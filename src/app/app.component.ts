@@ -6,7 +6,7 @@ import { filter } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'Fanarah';
@@ -18,13 +18,13 @@ export class AppComponent {
     } else {
       this.lang = 'en';
       sessionStorage.setItem('lang', 'en');
-    };
+    }
     this.translate.use(this.lang);
     this.translate.setDefaultLang(this.lang);
 
     //  to access the url from router
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
+      .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         const currentUrl = event.url;
         if (currentUrl.split('/')[1] == '') {
@@ -32,5 +32,4 @@ export class AppComponent {
         }
       });
   }
-
 }
