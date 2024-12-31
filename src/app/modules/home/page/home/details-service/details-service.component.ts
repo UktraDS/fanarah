@@ -1,4 +1,10 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { count, Subject, takeUntil } from 'rxjs';
 import { SharedService } from 'src/app/shared/services/shared.service';
 
@@ -15,34 +21,34 @@ import { SharedService } from 'src/app/shared/services/shared.service';
 //   { number: "100", title: "Teacher Totals",  subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor semper tincidunt ut feugiat nulla. Nisl vivamus id donec eu aliquet sagittis tincidunt pellentesque." }
 // ];
 
-
 @Component({
   selector: 'app-details-service',
   templateUrl: './details-service.component.html',
-  styleUrls: ['./details-service.component.scss']
+  styleUrls: ['./details-service.component.scss'],
 })
-export class DetailsServiceComponent implements OnInit{
+export class DetailsServiceComponent implements OnInit {
   @ViewChild('targetSection') targetSection?: ElementRef;
   unsubscribe: Subject<any> = new Subject();
   data?: any;
   animationExecuted: boolean = false;
-mainDatacount:any[] = [];
-  constructor(private sharedService: SharedService) { }
+  mainDatacount: any[] = [];
+  constructor(private sharedService: SharedService) {}
 
   ngOnInit(): void {
-    this.sharedService.getStatistics().pipe(takeUntil(this.unsubscribe)).subscribe({
-      next: (data) => {
-        this.mainDatacount = [...data.data]
-        this.data = [...data.data];
-        console.log(this.mainDatacount);
+    this.sharedService
+      .getStatistics()
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe({
+        next: (data) => {
+          this.mainDatacount = [...data.data];
+          this.data = [...data.data];
+          console.log(this.mainDatacount);
 
-        // this.startCountAnimation();
-
-      },
-    });
+          // this.startCountAnimation();
+        },
+      });
 
     window.addEventListener('scroll', this.scrollHandler.bind(this));
-
   }
 
   ngOnDestroy(): void {
@@ -52,7 +58,10 @@ mainDatacount:any[] = [];
   }
 
   scrollHandler(): void {
-    if (!this.animationExecuted && this.isElementInViewport(this.targetSection?.nativeElement)) {
+    if (
+      !this.animationExecuted &&
+      this.isElementInViewport(this.targetSection?.nativeElement)
+    ) {
       if (!this.animationExecuted) {
         this.startCountAnimation();
         this.animationExecuted = true;
@@ -67,7 +76,8 @@ mainDatacount:any[] = [];
     return (
       rect.top >= 0 &&
       rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
@@ -80,7 +90,7 @@ mainDatacount:any[] = [];
 
       const increment = Math.ceil(targetCount / (4000 / intervalTime));
       let currentCount = 1;
-      let defaultValue = this.data[index].count
+      let defaultValue = this.data[index].count;
       console.log(defaultValue);
 
       const interval = setInterval(() => {
@@ -89,17 +99,13 @@ mainDatacount:any[] = [];
           if (currentCount > targetCount) {
             currentCount = targetCount;
           }
-          console.log(this.data[index]);
 
           this.data[index].count = currentCount.toString();
         } else {
-console.log(this.data[index]);
-console.log(this.mainDatacount[index]);
+          console.log(this.data[index]);
+          console.log(this.mainDatacount[index]);
 
-
-  this.data[index].count = defaultValue ;
-
-
+          this.data[index].count = defaultValue;
 
           clearInterval(interval);
         }
@@ -126,15 +132,6 @@ console.log(this.mainDatacount[index]);
   //     }
   //   }
   // }
-
-
-
-
-
-
-
-
-
 
   // dataCards: CardItem[] = [];
 

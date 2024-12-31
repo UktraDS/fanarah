@@ -2,8 +2,8 @@
   <div class="container">
     <article class="text-center head-section">
       <h2 class="small-title">Academic Program</h2>
-      <h3 class="large-title">{{ ProgramData?.title }}</h3>
-      <p class="mx-auto">{{ ProgramData?.first_description }}</p>
+      <h3 class="large-title">{{ programHeadingData?.title }}</h3>
+      <p class="mx-auto">{{ programHeadingData?.description }}</p>
       <div class="btn-container mx-auto">
         <button class="btn">High School</button>
       </div>
@@ -19,24 +19,24 @@
           for learning.
         </p>
         <p>
-          {{ ProgramData?.second_description }}
+          {{ programData?.second_description }}
         </p>
         <ul>
           <li
             class="text-capitalize"
-            *ngFor="let item of ProgramData?.subtitles"
+            *ngFor="let item of programData?.subtitles"
           >
             {{ item }}
           </li>
         </ul>
         <p class="m-0">
-          {{ ProgramData?.last_description }}
+          {{ programData?.last_description }}
         </p>
       </section>
 
       <section class="col-lg-5 text-center">
         <img
-          [src]="ProgramData?.image"
+          [src]="programData?.image"
           alt="Academic Program Picture"
           class="img-fluid"
         />

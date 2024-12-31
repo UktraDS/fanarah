@@ -7,13 +7,20 @@ import { SharedService } from 'src/app/shared/services/shared.service';
   styleUrls: ['./academic-program.component.scss'],
 })
 export class AcademicProgramComponent {
-  ProgramData: any;
+  programHeadingData: any;
+  programData: any;
   constructor(private sharedService: SharedService) {}
 
   ngOnInit() {
+    this.sharedService.getProgramHeadingData().subscribe({
+      next: (res) => {
+        this.programHeadingData = res;
+      },
+    });
+
     this.sharedService.getProgramData().subscribe({
       next: (res) => {
-        this.ProgramData = res;
+        this.programData = res;
       },
     });
   }

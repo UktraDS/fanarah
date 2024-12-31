@@ -360,6 +360,17 @@ export class SharedService {
       );
   }
 
+  getProgramHeadingData(): Observable<any> {
+    this.setIsLoading(true);
+    return this.http
+      .get(`${this.url}american-page/programHeading`, { headers: this.headers })
+      .pipe(
+        tap(() => {
+          this.setIsLoading(false);
+        })
+      );
+  }
+
   getProgramData(): Observable<any> {
     this.setIsLoading(true);
     return this.http
