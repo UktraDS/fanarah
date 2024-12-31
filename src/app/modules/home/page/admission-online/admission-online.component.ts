@@ -1,6 +1,18 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, Inject, Renderer2, ViewChild } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import {
+  Component,
+  ElementRef,
+  Inject,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 import { Subject, takeUntil } from 'rxjs';
@@ -9,7 +21,7 @@ import { SharedService } from 'src/app/shared/services/shared.service';
 @Component({
   selector: 'app-admission-online',
   templateUrl: './admission-online.component.html',
-  styleUrls: ['./admission-online.component.scss']
+  styleUrls: ['./admission-online.component.scss'],
 })
 export class AdmissionOnlineComponent {
   unsubscribe: Subject<any> = new Subject();
@@ -25,14 +37,24 @@ export class AdmissionOnlineComponent {
   @ViewChild('modelApply') Model: ElementRef | undefined;
   today?: string;
 
-  constructor(@Inject(DOCUMENT) private documents: any,private formBuilder: FormBuilder, private toastrService: ToastrService, private sharedService: SharedService, private renderer: Renderer2, public translate: TranslateService) { }
+  constructor(
+    @Inject(DOCUMENT) private documents: any,
+    private formBuilder: FormBuilder,
+    private toastrService: ToastrService,
+    private sharedService: SharedService,
+    private renderer: Renderer2,
+    public translate: TranslateService
+  ) {}
 
   ngOnInit(): void {
-    this.sharedService.getContactUs().pipe(takeUntil(this.unsubscribe)).subscribe({
-      next: (data) => {
-        this.data = data.data;
-      },
-    });
+    this.sharedService
+      .getContactUs()
+      .pipe(takeUntil(this.unsubscribe))
+      .subscribe({
+        next: (data) => {
+          this.data = data.data;
+        },
+      });
 
     window.scroll({
       top: 0,
@@ -67,42 +89,39 @@ export class AdmissionOnlineComponent {
       gender: ['key', [Validators.required, this.notKeyValidator]],
       siblings: ['key', [Validators.required, this.notKeyValidator]],
 
-      program_applying_for: ['key', [Validators.required, this.notKeyValidator]],
+      program_applying_for: [
+        'key',
+        [Validators.required, this.notKeyValidator],
+      ],
       grade_applying_for: ['key', [Validators.required, this.notKeyValidator]],
-   //   transfers_grade: ['key', [Validators.required, this.notKeyValidator]],
-      previous_school_name: ['', [Validators.required]]
+      //   transfers_grade: ['key', [Validators.required, this.notKeyValidator]],
+      previous_school_name: ['', [Validators.required]],
     });
   }
-grade:any = null
-grades:any ={
-  national:[
-    "Pre-k",
-"KG1",
-"KG2",
-"Pr1",
-"Pr2",
-"Pr3",
-"Pr4",
-"Pr5",
-"Pr6",
-"Prep1",
-"Prep2",
-"Prep3",
-"Sec1",
-"Sec2"],
-FIPP:[
-  "Prep1 FIPP",
-  "Prep2 FIPP",
-  "Prep3 FIPP",
-],
-American:[
-  'G10',
-  'G11',
-]
-}
-changeGrades(e:any){
-this.grade = this.grades[e.target.value]
-}
+  grade: any = null;
+  grades: any = {
+    national: [
+      'Pre-k',
+      'KG1',
+      'KG2',
+      'Pr1',
+      'Pr2',
+      'Pr3',
+      'Pr4',
+      'Pr5',
+      'Pr6',
+      'Prep1',
+      'Prep2',
+      'Prep3',
+      'Sec1',
+      'Sec2',
+    ],
+    FIPP: ['Prep1 FIPP', 'Prep2 FIPP', 'Prep3 FIPP'],
+    American: ['G10', 'G11'],
+  };
+  changeGrades(e: any) {
+    this.grade = this.grades[e.target.value];
+  }
   emailPatternValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
       if (!control.value) {
@@ -110,7 +129,7 @@ this.grade = this.grades[e.target.value]
       }
       const emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
       const isValid = emailPattern.test(control.value);
-      return isValid ? null : { 'emailPattern': { value: control.value } };
+      return isValid ? null : { emailPattern: { value: control.value } };
     };
   }
 
@@ -188,8 +207,7 @@ this.grade = this.grades[e.target.value]
     //     optionElement.textContent = option;
     //     transfersGradeSelect.appendChild(optionElement);
     //   });
-  //  }
-
+    //  }
 
     // Disable transfers_grade select for 'Pre-k'
     //transfersGradeSelect.disabled = this.formGroup.value.grade_applying_for === 'Pre-k';
@@ -197,11 +215,25 @@ this.grade = this.grades[e.target.value]
     // Dispatch change event for transfers_grade select to trigger its update
     const event = new Event('change');
     //transfersGradeSelect.dispatchEvent(event);
-}
-
+  }
 
   getTransfersGradeOptions(selectedGrade: string): string[] {
-    const options: string[] = ['Pre-k','KG1', 'KG2', 'Pr1', 'Pr2', 'Pr3', 'Pr4', 'Pr5', 'Pr6', 'Prep1', 'Prep2', 'Prep3', 'Sec1',"Sec2"];
+    const options: string[] = [
+      'Pre-k',
+      'KG1',
+      'KG2',
+      'Pr1',
+      'Pr2',
+      'Pr3',
+      'Pr4',
+      'Pr5',
+      'Pr6',
+      'Prep1',
+      'Prep2',
+      'Prep3',
+      'Sec1',
+      'Sec2',
+    ];
     const index = options.indexOf(selectedGrade);
     if (index !== -1) {
       return options.slice(index + 1);
@@ -211,14 +243,23 @@ this.grade = this.grades[e.target.value]
 
   notKeyValidator(control: AbstractControl): { [key: string]: any } | null {
     if (control.value === 'key') {
-      return { 'notKey': true };
+      return { notKey: true };
     }
     return null;
   }
 
   submit() {
-    if (!this.formGroup.invalid && !this.hideGender && !this.hideSiblings && !this.hideGradeApply && !this.hideTransfersGrade &&
-      !(this.formGroup.value.grade_applying_for === 'KG2' && this.formGroup.value.transfers_grade === 'KG2')) {
+    if (
+      !this.formGroup.invalid &&
+      !this.hideGender &&
+      !this.hideSiblings &&
+      !this.hideGradeApply &&
+      !this.hideTransfersGrade &&
+      !(
+        this.formGroup.value.grade_applying_for === 'KG2' &&
+        this.formGroup.value.transfers_grade === 'KG2'
+      )
+    ) {
       this.isloading = true;
       this.sharedService.OnlineAdmission(this.formGroup.value).subscribe({
         next: (data: any) => {
@@ -228,28 +269,26 @@ this.grade = this.grades[e.target.value]
           this.hideGradeApply = false;
           this.hideTransfersGrade = false;
           this.formGroup.reset();
-          this.formGroup.get('gender')?.patchValue('key')
-          this.formGroup.get('siblings')?.patchValue('key')
-          this.formGroup.get('grade_applying_for')?.patchValue('key')
-          this.formGroup.get('transfers_grade')?.patchValue('key')
+          this.formGroup.get('gender')?.patchValue('key');
+          this.formGroup.get('siblings')?.patchValue('key');
+          this.formGroup.get('grade_applying_for')?.patchValue('key');
+          this.formGroup.get('transfers_grade')?.patchValue('key');
           this.toastrService.success(this.translate.instant('apply_Sent'));
           this.isloading = false;
 
-
           setTimeout(() => {
             this.ShowModel();
-            }, 100);
+          }, 100);
 
           setTimeout(() => {
             this.CloseModel();
           }, 2500);
-
         },
         error: (error: any) => {
           this.errorMess = 'Please Enter Fill Valid Data';
           this.toastrService.error(this.translate.instant('apply_invalid'));
           this.isloading = false;
-        }
+        },
       });
     } else {
       this.formGroup.markAllAsTouched();
@@ -281,5 +320,4 @@ this.grade = this.grades[e.target.value]
       modalElement.style.backgroundColor = '#0000004d';
     }
   }
-
 }

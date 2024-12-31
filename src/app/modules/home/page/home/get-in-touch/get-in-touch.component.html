@@ -1,39 +1,58 @@
 <div class="row m-0 d-flex justify-content-center get_in z-3" id="Contact">
-  <div class="col-12 row m-0  p-1 p-sm-3 m-auto d-flex justify-content-center">
-    <div class="col-12 col-md-6 c-div ">
-
-      <p class="title">{{ 'contact.lets'|translate }}</p>
+  <div class="col-12 row m-0 p-1 p-sm-3 m-auto d-flex justify-content-center">
+    <div class="col-12 col-md-6 c-div">
+      <p class="title">{{ "contact.lets" | translate }}</p>
       <div class="d-flex justify-content-center">
-        <div class="btn-sub-parent" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <button class="button_slider mb-3 mb-sm-0">{{ 'contact.contactus'|translate }}</button>
+        <div
+          class="btn-sub-parent"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <button class="button_slider mb-3 mb-sm-0">
+            {{ "contact.contactus" | translate }}
+          </button>
         </div>
       </div>
     </div>
     <div class="col-12 col-md-6 v-div">
-
-   <video [muted]="'muted'"  src="assets/image/contactUs/VID.mp4" autoplay  type="video/mp4"
-            class="Video_style"></video>
-
+      <video
+        [muted]="'muted'"
+        src="assets/image/contactUs/VID.mp4"
+        type="video/mp4"
+        class="Video_style"
+        autoplay
+        loop
+      ></video>
     </div>
   </div>
-  <img src="assets/image/pattern/Frame4.png" class="pattern1" alt="">
-  <img src="assets/image/pattern/Frame6.png" class="pattern2" alt="">
-  <img src="assets/image/pattern/Frame5.png" class="pattern3" alt="">
-  <!-- <img src="assets/image/pattern/Frame.png" class="pattern4" alt=""> -->
-  <img src="assets/image/pattern/Frame7.png" class="pattern5" alt="">
+  <img src="assets/image/pattern/Frame4.png" class="pattern1" alt="" />
+  <img src="assets/image/pattern/Frame6.png" class="pattern2" alt="" />
+  <img src="assets/image/pattern/Frame5.png" class="pattern3" alt="" />
+  <img src="assets/image/pattern/Frame7.png" class="pattern5" alt="" />
 </div>
 
 <div class="modal_style">
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-    #menuContact>
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    #menuContact
+  >
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="modal-body text-center">
           <div class="Title_h">
-            {{ 'contact.contactus'|translate }}
+            {{ "contact.contactus" | translate }}
           </div>
           <div class="content-box">
             <form [formGroup]="formGroup">
@@ -41,84 +60,142 @@
                 <div class="col-12">
                   <div class="form-group">
                     <p><i class="fa-solid fa-user"></i></p>
-                    <input type="text" placeholder="{{ 'contact.name'|translate }}"
-                      formControlName="name">
+                    <input
+                      type="text"
+                      placeholder="{{ 'contact.name' | translate }}"
+                      formControlName="name"
+                    />
                   </div>
-                  <div *ngIf="formGroup.get('name')?.invalid && formGroup.get('name')?.touched" class="text-danger">
-                    {{ 'contact.valid_Name'| translate }}
+                  <div
+                    *ngIf="
+                      formGroup.get('name')?.invalid &&
+                      formGroup.get('name')?.touched
+                    "
+                    class="text-danger"
+                  >
+                    {{ "contact.valid_Name" | translate }}
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
                     <p><i class="fa-solid fa-envelope"></i></p>
-                    <input type="text" placeholder="{{ 'contact.email'|translate }}"
-                      formControlName="email">
+                    <input
+                      type="text"
+                      placeholder="{{ 'contact.email' | translate }}"
+                      formControlName="email"
+                    />
                   </div>
                   <div
-                    *ngIf="formGroup.get('email')?.invalid &&  (formGroup.get('email')?.hasError('pattern') || formGroup.get('email')?.touched)"
-                    class="text-danger">
-                    {{ 'contact.valid_email'| translate }}
+                    *ngIf="
+                      formGroup.get('email')?.invalid &&
+                      (formGroup.get('email')?.hasError('pattern') ||
+                        formGroup.get('email')?.touched)
+                    "
+                    class="text-danger"
+                  >
+                    {{ "contact.valid_email" | translate }}
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
                     <p><i class="fa-solid fa-phone"></i></p>
-                    <input type="text" placeholder="Enter your phone"
-                      placeholder="{{ 'contact.Phone'|translate }}" formControlName="phone"
-                      maxlength="11">
+                    <input
+                      type="text"
+                      placeholder="Enter your phone"
+                      placeholder="{{ 'contact.Phone' | translate }}"
+                      formControlName="phone"
+                      maxlength="11"
+                    />
                   </div>
                   <div
-                    *ngIf="formGroup.get('phone')?.invalid && (formGroup.get('phone')?.hasError('pattern') || formGroup.get('phone')?.touched)"
-                    class="text-danger">
-                    {{ 'contact.valid_phone'| translate }}
+                    *ngIf="
+                      formGroup.get('phone')?.invalid &&
+                      (formGroup.get('phone')?.hasError('pattern') ||
+                        formGroup.get('phone')?.touched)
+                    "
+                    class="text-danger"
+                  >
+                    {{ "contact.valid_phone" | translate }}
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group form-group_">
                     <p><i class="fa-solid fa-building-user"></i></p>
-                    <select class="form-select" aria-label="Default select example" formControlName="department"
-                      (change)="checkType()">
-                      <option disabled [value]="'different'|translate">{{ 'different'|translate }}
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      formControlName="department"
+                      (change)="checkType()"
+                    >
+                      <option disabled [value]="'different' | translate">
+                        {{ "different" | translate }}
                       </option>
-                      <option [value]="'contact.students'|translate">
-                        {{ 'contact.students'|translate }}</option>
-                      <option [value]="'contact.admissions'|translate">
-                        {{ 'contact.admissions'|translate }}</option>
-                      <option [value]="'contact.finance'|translate">
-                        {{ 'contact.finance'|translate }}</option>
-                      <option [value]="'contact.complaints'|translate">
-                        {{ 'contact.complaints'|translate }}</option>
+                      <option [value]="'contact.students' | translate">
+                        {{ "contact.students" | translate }}
+                      </option>
+                      <option [value]="'contact.admissions' | translate">
+                        {{ "contact.admissions" | translate }}
+                      </option>
+                      <option [value]="'contact.finance' | translate">
+                        {{ "contact.finance" | translate }}
+                      </option>
+                      <option [value]="'contact.complaints' | translate">
+                        {{ "contact.complaints" | translate }}
+                      </option>
                     </select>
                   </div>
-                  <div *ngIf="formGroup.get('department')?.invalid && formGroup.get('department')?.touched"
-                    class="text-danger  form-group_">
-                    {{ 'contact.valid_Select'| translate }}
+                  <div
+                    *ngIf="
+                      formGroup.get('department')?.invalid &&
+                      formGroup.get('department')?.touched
+                    "
+                    class="text-danger form-group_"
+                  >
+                    {{ "contact.valid_Select" | translate }}
                   </div>
-                  <div *ngIf="hide" class="text-danger  form-group_">
-                    {{ 'contact.valid_Select'| translate }}
+                  <div *ngIf="hide" class="text-danger form-group_">
+                    {{ "contact.valid_Select" | translate }}
                   </div>
                 </div>
 
                 <div class="col-12">
                   <div class="form-group-textarea">
                     <p><i class="fa-solid fa-envelope"></i></p>
-                    <textarea id="message" rows="2" placeholder="{{ 'contact.message'|translate }}"
-                      formControlName="message"></textarea>
+                    <textarea
+                      id="message"
+                      rows="2"
+                      placeholder="{{ 'contact.message' | translate }}"
+                      formControlName="message"
+                    ></textarea>
                   </div>
-                  <div *ngIf="formGroup.get('message')?.invalid && formGroup.get('message')?.touched"
-                    class="text-danger mb-5">
-                    {{ 'contact.valid_message'| translate }}
+                  <div
+                    *ngIf="
+                      formGroup.get('message')?.invalid &&
+                      formGroup.get('message')?.touched
+                    "
+                    class="text-danger mb-5"
+                  >
+                    {{ "contact.valid_message" | translate }}
                   </div>
                 </div>
-                <div class="alert alert-danger" role="alert"
-                  *ngIf="formGroup.invalid && formGroup.touched && errorMess != ''" class="text-danger">
-                  {{ errorMess |translate }}
+                <div
+                  class="alert alert-danger"
+                  role="alert"
+                  *ngIf="
+                    formGroup.invalid && formGroup.touched && errorMess != ''
+                  "
+                  class="text-danger"
+                >
+                  {{ errorMess | translate }}
                 </div>
               </div>
               <button (click)="submit()">
-                <div class="spinner-border" role="status" *ngIf="isloading">
-                </div>
-                {{ 'contact.send' | translate }}
+                <div
+                  class="spinner-border"
+                  role="status"
+                  *ngIf="isloading"
+                ></div>
+                {{ "contact.send" | translate }}
               </button>
             </form>
           </div>
