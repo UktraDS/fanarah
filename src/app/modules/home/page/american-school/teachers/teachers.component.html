@@ -1,24 +1,25 @@
 <section class="teachers-section">
-    <div class="container">
-        <article class="content d-flex flex-column flex-lg-row align-items-center justify-content-center">
-            <img src="assets/image/american-school/teachers-pic.svg" alt="Teachers Picture" />
+  <div class="container">
+    <article
+      class="content d-flex flex-column flex-lg-row align-items-center justify-content-center"
+    >
+      <img [src]="teachersData?.image" alt="Teachers Picture" />
 
-            <section class="desc">
-                <h2 class="small-title">Teachers</h2>
-                <h3 class="large-title">Our Dedicated and Inspiring Educators</h3>
-                <p>
-                    Our educators come from diverse backgrounds and hold relevant certifications and degrees in their
-                    fields of expertise. They bring innovative teaching techniques, foster an inclusive classroom
-                    environment, and are committed to continuous professional development to stay updated with the
-                    latest educational practices.
-                </p>
-                <ul>
-                    <li class="text-capitalize">Student-Centered Approach</li>
-                    <li class="text-capitalize">Guidance and Mentorship</li>
-                    <li class="text-capitalize">Collaborative and Innovative</li>
-                </ul>
-            </section>
-
-        </article>
-    </div>
+      <section class="desc">
+        <h2 class="small-title">Teachers</h2>
+        <h3 class="large-title">{{ teachersData?.title }}</h3>
+        <p>
+          {{ teachersData?.description }}
+        </p>
+        <ul>
+          <li
+            *ngFor="let item of teachersData?.subtitles"
+            class="text-capitalize"
+          >
+            {{ item }}
+          </li>
+        </ul>
+      </section>
+    </article>
+  </div>
 </section>

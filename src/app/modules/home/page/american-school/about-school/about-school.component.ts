@@ -8,20 +8,12 @@ import { SharedService } from 'src/app/shared/services/shared.service';
 })
 export class AboutSchoolComponent {
   data: any;
-  constructor(private sharedService: SharedService) {
-    // this.sharedService.getAboutSchoolData().subscribe({
-    //   next: (res) => {
-    //     this.data = res;
-    //     console.log(res);
-    //   },
-    // });
-  }
+  constructor(private sharedService: SharedService) {}
 
   ngOnInit() {
     this.sharedService.getAboutSchoolData().subscribe({
       next: (res) => {
         this.data = res;
-        console.log(res);
       },
     });
   }

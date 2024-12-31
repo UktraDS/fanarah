@@ -1,10 +1,10 @@
 <app-sub-header [customClass]="true" />
-<section class="top-bar">
+<section
+  class="top-bar"
+  [style.backgroundImage]="'url(' + headerData?.image + ')'"
+>
   <article class="content text-center">
-    <h1 class="mb-2 mb-md-3">Fanarah American School</h1>
-    <p class="mb-0 mx-auto">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus imperdiet
-      sed id elementum. Cursus imperdiet sed id elementum.
-    </p>
+    <h1 class="mb-2 mb-md-3">{{ headerData?.title }}</h1>
+    <p class="mb-0 mx-auto">{{ headerData?.description }}</p>
   </article>
 </section>

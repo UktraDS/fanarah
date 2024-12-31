@@ -338,10 +338,54 @@ export class SharedService {
   }
 
   // American School Page
+  getHeaderData(): Observable<any> {
+    this.setIsLoading(true);
+    return this.http
+      .get(`${this.url}american-page/header`, { headers: this.headers })
+      .pipe(
+        tap(() => {
+          this.setIsLoading(false);
+        })
+      );
+  }
+
   getAboutSchoolData(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}american-page/about`, { headers: this.headers })
+      .pipe(
+        tap(() => {
+          this.setIsLoading(false);
+        })
+      );
+  }
+
+  getProgramData(): Observable<any> {
+    this.setIsLoading(true);
+    return this.http
+      .get(`${this.url}american-page/Program`, { headers: this.headers })
+      .pipe(
+        tap(() => {
+          this.setIsLoading(false);
+        })
+      );
+  }
+
+  getActivityData(): Observable<any> {
+    this.setIsLoading(true);
+    return this.http
+      .get(`${this.url}american-page/Activity`, { headers: this.headers })
+      .pipe(
+        tap(() => {
+          this.setIsLoading(false);
+        })
+      );
+  }
+
+  getTeachersData(): Observable<any> {
+    this.setIsLoading(true);
+    return this.http
+      .get(`${this.url}american-page/teachers`, { headers: this.headers })
       .pipe(
         tap(() => {
           this.setIsLoading(false);
