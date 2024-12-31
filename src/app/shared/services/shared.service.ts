@@ -12,7 +12,7 @@ export class SharedService {
   url = 'https://dashboard.fanarah.net/api/';
   lang = sessionStorage.getItem('lang') ?? 'en';
 
-  headers = new HttpHeaders()
+  headers: HttpHeaders = new HttpHeaders()
     .set('X-localization', sessionStorage.getItem('lang') ?? 'en')
     .set('Accept', 'application/json')
     .set('Access-Control-Allow-Origin', '*')
@@ -42,7 +42,7 @@ export class SharedService {
       })
     );
   }
-  getHomeheader(param?: any): Observable<any> {
+  getHomeheader(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/header`, { headers: this.headers })
@@ -52,7 +52,7 @@ export class SharedService {
         })
       );
   }
-  getCvheader(param?: any): Observable<any> {
+  getCvheader(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}career/cv-header`, { headers: this.headers })
@@ -62,7 +62,7 @@ export class SharedService {
         })
       );
   }
-  getCareerheader(param?: any): Observable<any> {
+  getCareerheader(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}career/career-header`, { headers: this.headers })
@@ -72,7 +72,7 @@ export class SharedService {
         })
       );
   }
-  getPositionheader(param?: any): Observable<any> {
+  getPositionheader(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}career/position-header`, { headers: this.headers })
@@ -82,7 +82,7 @@ export class SharedService {
         })
       );
   }
-  getCareerlist(param?: any): Observable<any> {
+  getCareerlist(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}career/career`, { headers: this.headers })
@@ -112,7 +112,7 @@ export class SharedService {
         })
       );
   }
-  getFeatureInfomation(param?: any): Observable<any> {
+  getFeatureInfomation(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/features-info`, { headers: this.headers })
@@ -122,7 +122,7 @@ export class SharedService {
         })
       );
   }
-  getEducatingChildren(param?: any): Observable<any> {
+  getEducatingChildren(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/educating`, { headers: this.headers })
@@ -132,7 +132,7 @@ export class SharedService {
         })
       );
   }
-  getPrograms(param?: any): Observable<any> {
+  getPrograms(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/programs`, { headers: this.headers })
@@ -142,7 +142,7 @@ export class SharedService {
         })
       );
   }
-  getStatistics(param?: any): Observable<any> {
+  getStatistics(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/statistics`, { headers: this.headers })
@@ -152,7 +152,7 @@ export class SharedService {
         })
       );
   }
-  getaboutus(param?: any): Observable<any> {
+  getaboutus(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/about-us`, { headers: this.headers })
@@ -162,7 +162,7 @@ export class SharedService {
         })
       );
   }
-  getHouses(param?: any): Observable<any> {
+  getHouses(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/houses`, { headers: this.headers })
@@ -172,7 +172,7 @@ export class SharedService {
         })
       );
   }
-  getAgePrograms(param?: any): Observable<any> {
+  getAgePrograms(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/age-programs`, { headers: this.headers })
@@ -182,7 +182,7 @@ export class SharedService {
         })
       );
   }
-  getGalleryEvents(param?: any): Observable<any> {
+  getGalleryEvents(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/gallery`, { headers: this.headers })
@@ -192,7 +192,7 @@ export class SharedService {
         })
       );
   }
-  getComments(param?: any): Observable<any> {
+  getComments(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/comments`, { headers: this.headers })
@@ -202,7 +202,7 @@ export class SharedService {
         })
       );
   }
-  getTeachers(param?: any): Observable<any> {
+  getTeachers(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/teachers`, { headers: this.headers })
@@ -212,7 +212,7 @@ export class SharedService {
         })
       );
   }
-  getGuideAbout2(param?: any): Observable<any> {
+  getGuideAbout2(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/guide`, { headers: this.headers })
@@ -224,7 +224,7 @@ export class SharedService {
   }
 
   // about us page
-  getWhoWeAre(param?: any): Observable<any> {
+  getWhoWeAre(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}about/why`, { headers: this.headers })
@@ -234,7 +234,7 @@ export class SharedService {
         })
       );
   }
-  getOurService(param?: any): Observable<any> {
+  getOurService(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}about/services`, { headers: this.headers })
@@ -246,7 +246,7 @@ export class SharedService {
   }
 
   // Schools page
-  getSchoolCampus(param?: any): Observable<any> {
+  getSchoolCampus(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}school-campus`, { headers: this.headers })
@@ -268,7 +268,7 @@ export class SharedService {
   }
 
   // Event Gallery page
-  getEventGallery(param?: any): Observable<any> {
+  getEventGallery(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}activity-gallery`, { headers: this.headers })
@@ -290,7 +290,7 @@ export class SharedService {
   }
 
   //Contact us
-  getContactUs(param?: any): Observable<any> {
+  getContactUs(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/contact-us`, { headers: this.headers })
@@ -326,7 +326,7 @@ export class SharedService {
   }
 
   // Global
-  getLinksSocialMedia(param?: any): Observable<any> {
+  getLinksSocialMedia(): Observable<any> {
     this.setIsLoading(true);
     return this.http
       .get(`${this.url}home/social-media`, { headers: this.headers })
