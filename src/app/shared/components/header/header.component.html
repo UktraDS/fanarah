@@ -129,14 +129,8 @@
         <li class="page" routerLink="/home" routerLinkActive="active-page">
           {{ "header.home" | translate }}
         </li>
-        <!-- <li
-          class="page mt-3"
-          routerLink="/Schools"
-          routerLinkActive="active-page"
-        >
-          {{ "header.schools" | translate }}
-        </li> -->
-        <li class="page mt-3 position-relative">
+
+        <!-- <li class="page mt-3 position-relative">
           <button class="btn dropdown-toggle p-0 border-0" type="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             {{ "header.schools" | translate }}
@@ -152,6 +146,25 @@
                 "header.american_school" | translate
                 }}</a>
             </li>
+          </ul>
+        </li> -->
+
+        <!-- <li class="dropdown page mt-3">
+          <button class="btn dropdown-toggle p-0 border-0" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            {{ "header.schools" | translate }}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" routerLink="/national-school">{{ "header.national_school" | translate }}</a>
+            <a class="dropdown-item" routerLink="/american-school">{{ "header.american_school" | translate }}</a>
+          </div>
+        </li> -->
+
+        <li class="page mt-3 position-relative">
+          {{ "header.schools" | translate }}
+          <ul class="mobile-ul">
+            <li><a routerLink="/national-school">{{"header.national_school" | translate}}</a></li>
+            <li><a routerLink="/american-school">{{"header.american_school" | translate}}</a></li>
           </ul>
         </li>
 

@@ -10,24 +10,23 @@ import { CareerHeaderComponent } from './components/career-header/career-header.
 import { CareerFormComponent } from './components/career-form/career-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-
-
 @NgModule({
-  declarations: [FooterComponent,HeaderComponent,ScreenLoadarComponent, SubHeaderComponent, CareerHeaderComponent, CareerFormComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    ReactiveFormsModule,
-    TranslateModule
+  declarations: [
+    FooterComponent,
+    HeaderComponent,
+    ScreenLoadarComponent,
+    SubHeaderComponent,
+    CareerHeaderComponent,
+    CareerFormComponent,
   ],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, TranslateModule],
   exports: [
     HeaderComponent,
     FooterComponent,
     CareerHeaderComponent,
     CareerFormComponent,
     ScreenLoadarComponent,
-    SubHeaderComponent
+    SubHeaderComponent,
   ],
 })
-export class SharedModule { }
+export class SharedModule {}

@@ -336,3 +336,16 @@
 .main.show-scrollTop .scroll {
   animation: bounce 2s infinite;
 }
+
+.mobile-ul {
+  li {
+    list-style-type: circle !important;
+    &:hover {
+      color: red;
+    }
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
